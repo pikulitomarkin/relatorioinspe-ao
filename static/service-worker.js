@@ -6,8 +6,6 @@ const urlsToCache = [
   "/static/icons/icon-192x192.png", // Ícone
   "/static/icons/icon-512x512.png", // Ícone
   "/templates/index.html", // Página HTML
-  "/static/style.css", // Arquivo CSS (se houver)
-  "/static/script.js", // Arquivo JS (se houver)
   "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" // Biblioteca para gerar Excel
 ];
 
