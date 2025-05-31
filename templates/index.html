@@ -293,23 +293,47 @@
             }
         });
 
-        function generateExcelOffline() {
-          getDataFromDB().then((data) => {
+        async function generateExcelOffline() {
+          try {
+            // Carrega o modelo de planilha
+            const response = await fetch('/static/modelo.xlsx');
+            const arrayBuffer = await response.arrayBuffer();
+            const workbook = XLSX.read(arrayBuffer, { type: 'array' });
+
+            // Seleciona a primeira aba da planilha
+            const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+
+            // Obtém os dados do IndexedDB
+            const data = await getDataFromDB();
             if (data.length === 0) {
               alert("Nenhum dado disponível para gerar a planilha.");
               return;
             }
 
-            // Cria a planilha
-            const worksheet = XLSX.utils.json_to_sheet(data);
-            const workbook = XLSX.utils.book_new();
-            XLSX.utils.book_append_sheet(workbook, worksheet, "Inspecao");
+            // Preenche os dados na planilha
+            let startRow = 6; // Supondo que os dados começam na linha 6
+            data.forEach((row, index) => {
+              XLSX.utils.sheet_add_aoa(worksheet, [[
+                row["Nº da Torre"] || "",
+                row["Parte Afetada (Macro)"] || "",
+                row["Parte Afetada (Micro)"] || "",
+                row["Sintomas Dano (Macro)"] || "",
+                row["Sintomas Dano (Micro)"] || "",
+                row["Data Inspeção"] || "",
+                row["Data Nec. Exec."] || "",
+                row["Prioridade"] || "",
+                row["Texto do Item"] || "",
+                row["Observação (Texto da Situação)"] || ""
+              ]], { origin: `A${startRow + index}` });
+            });
 
             // Salva o arquivo Excel
             XLSX.writeFile(workbook, "inspecao_offline.xlsx");
-          }).catch((error) => {
-            console.error("Erro ao gerar a planilha:", error);
-          });
+            alert("Planilha gerada com sucesso!");
+          } catch (error) {
+            console.error("Erro ao gerar a planilha offline:", error);
+            alert("Erro ao gerar a planilha offline.");
+          }
         }
 
         // Botão para gerar a planilha offline
