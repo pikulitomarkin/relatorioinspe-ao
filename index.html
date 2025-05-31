@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Inspeção</title>
+    <link rel="manifest" href="/static/manifest.json">
+    <meta name="theme-color" content="#007bff">
+    <style>
+        /* Estilo geral */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* Container do formulário */
+        .form-container {
+            background-color: #fff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px; /* Espaçamento entre os campos */
+            margin-bottom: 15px; /* Espaçamento entre as linhas */
+        }
+
+        .form-row div {
+            flex: 1; /* Faz com que os campos ocupem o mesmo espaço */
+        }
+
+        .form-row label {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .form-row input {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-row textarea,
+        .form-row button {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-row textarea {
+            resize: vertical;
+        }
+
+        .form-row button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-row button:hover {
+            background-color: #45a049;
+        }
+
+        .form-row button#reset-data {
+            background-color: #f44336;
+        }
+
+        .form-row button#reset-data:hover {
+            background-color: #d32f2f;
+        }
+
+        /* Mensagem de feedback */
+        #message-area {
+            margin-top: 20px;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Relatório de Inspeção</h1>
+        <form id="inspection-form">
+            <div class="form-row">
+                <div>
+                    <label for="ordem">Nº da Ordem:</label>
+                    <input type="text" id="ordem" name="Nº da Ordem">
+                </div>
+                <div>
+                    <label for="especialidade">Especialidade:</label>
+                    <input type="text" id="especialidade" name="Especialidade">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <label for="lt">LT:</label>
+                    <input type="text" id="lt" name="LT">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <label for="numero_torre">Nº da Torre:</label>
+                    <input type="text" id="numero_torre" name="Nº da Torre" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <label for="parte_macro">Parte Afetada (Macro):</label>
+                    <input type="text" id="parte_macro" name="Parte Afetada (Macro)" required>
+                </div>
+                <div>
+                    <label for="parte_micro">Parte Afetada (Micro):</label>
+                    <input type="text" id="parte_micro" name="Parte Afetada (Micro)" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <label for="sintoma_macro">Sintomas Dano (Macro):</label>
+                    <input type="text" id="sintoma_macro" name="Sintomas Dano (Macro)" required>
+                </div>
+                <div>
+                    <label for="sintoma_micro">Sintomas Dano (Micro):</label>
+                    <input type="text" id="sintoma_micro" name="Sintomas Dano (Micro)" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <label for="data_inspecao">Data Inspeção:</label>
+                    <input type="date" id="data_inspecao" name="Data Inspeção" required>
+                </div>
+                <div>
+                    <label for="data_exec">Data Nec. Exec.:</label>
+                    <input type="date" id="data_exec" name="Data Nec. Exec." required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <label for="prioridade">Prioridade:</label>
+                    <input type="text" id="prioridade" name="Prioridade">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <label for="texto_item">Texto do Item:</label>
+                    <textarea id="texto_item" name="Texto do Item"></textarea>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <label for="observacao">Observação (Texto da Situação):</label>
+                    <textarea id="observacao" name="Observação (Texto da Situação)"></textarea>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <button type="submit">Enviar Dados</button>
+                <button type="button" id="generate-excel-offline">Gerar Planilha Inspeção</button>
+                <button type="button" id="reset-data">Finalizar Inspeção</button>
+            </div>
+        </form>
+        <div id="message-area"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script>
+        const dbName = "inspecaoDB";
+        const storeName = "dadosInspecao";
+
+        function initDB() {
+          return new Promise((resolve, reject) => {
+            const request = indexedDB.open(dbName, 1);
+
+            request.onupgradeneeded = (event) => {
+              const db = event.target.result;
+              if (!db.objectStoreNames.contains(storeName)) {
+                db.createObjectStore(storeName, { keyPath: "id", autoIncrement: true });
+              }
+              if (!db.objectStoreNames.contains("defaultValues")) {
+                db.createObjectStore("defaultValues", { keyPath: "key" });
+              }
+            };
+
+            request.onsuccess = (event) => {
+              resolve(event.target.result);
+            };
+
+            request.onerror = (event) => {
+              reject(event.target.error);
+            };
+          });
+        }
+
+        function saveDataToDB(data) {
+          initDB().then((db) => {
+            const transaction = db.transaction(storeName, "readwrite");
+            const store = transaction.objectStore(storeName);
+            store.add(data);
+            transaction.oncomplete = () => {
+              console.log("Dados salvos no IndexedDB.");
+            };
+            transaction.onerror = (event) => {
+              console.error("Erro ao salvar dados no IndexedDB:", event.target.error);
+            };
+          });
+        }
+
+        function getDataFromDB() {
+          return new Promise((resolve, reject) => {
+            initDB().then((db) => {
+              const transaction = db.transaction(storeName, "readonly");
+              const store = transaction.objectStore(storeName);
+              const request = store.getAll();
+
+              request.onsuccess = (event) => {
+                resolve(event.target.result);
+              };
+
+              request.onerror = (event) => {
+                reject(event.target.error);
+              };
+            });
+          });
+        }
+
+        function saveDefaultValues(defaults) {
+          initDB().then((db) => {
+            const transaction = db.transaction("defaultValues", "readwrite");
+            const store = transaction.objectStore("defaultValues");
+
+            Object.keys(defaults).forEach((key) => {
+              store.put({ key: key, value: defaults[key] });
+            });
+
+            transaction.oncomplete = () => {
+              console.log("Valores padrão salvos no IndexedDB.");
+            };
+
+            transaction.onerror = (event) => {
+              console.error("Erro ao salvar valores padrão no IndexedDB:", event.target.error);
+            };
+          });
+        }
+
+        function getDefaultValues() {
+          return new Promise((resolve, reject) => {
+            initDB().then((db) => {
+              const transaction = db.transaction("defaultValues", "readonly");
+              const store = transaction.objectStore("defaultValues");
+              const request = store.getAll();
+
+              request.onsuccess = (event) => {
+                const result = event.target.result.reduce((acc, item) => {
+                  acc[item.key] = item.value;
+                  return acc;
+                }, {});
+                resolve(result);
+              };
+
+              request.onerror = (event) => {
+                reject(event.target.error);
+              };
+            });
+          });
+        }
+
+        function showMessage(message, isError = false) {
+            const messageArea = document.getElementById('message-area');
+            messageArea.style.color = isError ? 'red' : 'green';
+            messageArea.textContent = message;
+            setTimeout(() => {
+                messageArea.textContent = '';
+            }, 5000);
+        }
+
+        document.getElementById('inspection-form').addEventListener('submit', function (event) {
+          event.preventDefault();
+
+          const formData = new FormData(event.target);
+          const data = Object.fromEntries(formData.entries());
+
+          // Salva os valores padrão
+          saveDefaultValues({
+            "Nº da Ordem": data["Nº da Ordem"],
+            "Especialidade": data["Especialidade"],
+            "LT": data["LT"]
+          });
+
+          // Salva os dados no IndexedDB
+          saveDataToDB(data);
+
+          alert("Dados salvos localmente!");
+          event.target.reset();
+        });
+
+     
+
+        async function generateExcelOffline() {
+            console.log("Botão 'Gerar Planilha Inspeção' clicado.");
+            try {
+                // Carrega o modelo de planilha
+                const response = await fetch('/static/modelo.xlsx');
+                if (!response.ok) {
+                  throw new Error("Erro ao carregar o modelo de planilha.");
+                }
+                const arrayBuffer = await response.arrayBuffer();
+                const workbook = XLSX.read(arrayBuffer, { type: 'array' });
+
+                // Seleciona a primeira aba da planilha
+                const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+
+                // Obtém os valores padrão
+                const defaultValues = await getDefaultValues();
+                console.log("Valores padrão para o cabeçalho:", defaultValues);
+
+                // Preenche os valores padrão no cabeçalho
+                worksheet["C3"] = { v: defaultValues["Nº da Ordem"] || "" };
+                worksheet["J3"] = { v: defaultValues["Especialidade"] || "" };
+                worksheet["Q3"] = { v: defaultValues["LT"] || "" };
+
+                // Obtém os dados do IndexedDB
+                const data = await getDataFromDB();
+                console.log("Dados para preencher a planilha:", data);
+
+                if (data.length === 0) {
+                  alert("Nenhum dado disponível para gerar a planilha.");
+                  return;
+                }
+
+                // Preenche os dados na planilha
+                let startRow = 6; // Supondo que os dados começam na linha 6
+                data.forEach((row, index) => {
+                  XLSX.utils.sheet_add_aoa(worksheet, [[
+                    row["Nº da Torre"] || "",
+                    row["Parte Afetada (Macro)"] || "",
+                    row["Parte Afetada (Micro)"] || "",
+                    row["Sintomas Dano (Macro)"] || "",
+                    row["Sintomas Dano (Micro)"] || "",
+                    row["Data Inspeção"] || "",
+                    row["Data Nec. Exec."] || "",
+                    row["Prioridade"] || "",
+                    row["Texto do Item"] || "",
+                    row["Observação (Texto da Situação)"] || ""
+                  ]], { origin: `A${startRow + index}` });
+                });
+
+                // Salva o arquivo Excel
+                XLSX.writeFile(workbook, "inspecao_offline.xlsx");
+                alert("Planilha gerada com sucesso!");
+              } catch (error) {
+                console.error("Erro ao gerar a planilha offline:", error);
+                alert("Erro ao gerar a planilha offline.");
+              }
+        }
+
+        // Botão para gerar a planilha offline
+        document.getElementById('generate-excel-offline').addEventListener('click', generateExcelOffline);
+
+        document.getElementById('reset-data').addEventListener('click', function () {
+            console.log("Botão 'Finalizar Inspeção' clicado.");
+            if (confirm("Tem certeza de que deseja reiniciar os dados?")) {
+                initDB().then((db) => {
+                    console.log("Acessando o IndexedDB para limpar os dados...");
+                    const transaction = db.transaction(storeName, "readwrite");
+                    const store = transaction.objectStore(storeName);
+                    const clearRequest = store.clear();
+
+                    clearRequest.onsuccess = () => {
+                        console.log("Dados reiniciados com sucesso!");
+                        alert("Dados reiniciados com sucesso!");
+                    };
+
+                    clearRequest.onerror = (event) => {
+                        console.error("Erro ao reiniciar os dados:", event.target.error);
+                        alert("Erro ao reiniciar os dados.");
+                    };
+                }).catch((error) => {
+                    console.error("Erro ao acessar o IndexedDB:", error);
+                    alert("Erro ao acessar o banco de dados.");
+                });
+            }
+        });
+
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker
+              .register("/static/service-worker.js")
+              .then((registration) => {
+                console.log("Service Worker registrado com sucesso:", registration);
+              })
+              .catch((error) => {
+                console.log("Falha ao registrar o Service Worker:", error);
+              });
+          }
+    </script>
+</body>
+</html>
