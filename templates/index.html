@@ -194,7 +194,64 @@
         <div id="message-area"></div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script>
+        const dbName = "inspecaoDB";
+        const storeName = "dadosInspecao";
+
+        function initDB() {
+          return new Promise((resolve, reject) => {
+            const request = indexedDB.open(dbName, 1);
+
+            request.onupgradeneeded = (event) => {
+              const db = event.target.result;
+              if (!db.objectStoreNames.contains(storeName)) {
+                db.createObjectStore(storeName, { keyPath: "id", autoIncrement: true });
+              }
+            };
+
+            request.onsuccess = (event) => {
+              resolve(event.target.result);
+            };
+
+            request.onerror = (event) => {
+              reject(event.target.error);
+            };
+          });
+        }
+
+        function saveDataToDB(data) {
+          initDB().then((db) => {
+            const transaction = db.transaction(storeName, "readwrite");
+            const store = transaction.objectStore(storeName);
+            store.add(data);
+            transaction.oncomplete = () => {
+              console.log("Dados salvos no IndexedDB.");
+            };
+            transaction.onerror = (event) => {
+              console.error("Erro ao salvar dados no IndexedDB:", event.target.error);
+            };
+          });
+        }
+
+        function getDataFromDB() {
+          return new Promise((resolve, reject) => {
+            initDB().then((db) => {
+              const transaction = db.transaction(storeName, "readonly");
+              const store = transaction.objectStore(storeName);
+              const request = store.getAll();
+
+              request.onsuccess = (event) => {
+                resolve(event.target.result);
+              };
+
+              request.onerror = (event) => {
+                reject(event.target.error);
+              };
+            });
+          });
+        }
+
         function showMessage(message, isError = false) {
             const messageArea = document.getElementById('message-area');
             messageArea.style.color = isError ? 'red' : 'green';
@@ -204,27 +261,17 @@
             }, 5000);
         }
 
-        document.getElementById('inspection-form').addEventListener('submit', async function(event) {
-            event.preventDefault();
+        document.getElementById('inspection-form').addEventListener('submit', function (event) {
+          event.preventDefault();
 
-            const formData = new FormData(event.target);
-            const data = Object.fromEntries(formData.entries());
+          const formData = new FormData(event.target);
+          const data = Object.fromEntries(formData.entries());
 
-            const response = await fetch('/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
+          // Salva os dados no IndexedDB
+          saveDataToDB(data);
 
-            if (response.ok) {
-                showMessage('Dados enviados com sucesso!');
-                event.target.reset();
-            } else {
-                const error = await response.json();
-                showMessage(`Erro: ${error.message}`, true);
-            }
+          alert("Dados salvos localmente!");
+          event.target.reset();
         });
 
         document.getElementById('generate-excel').addEventListener('click', async function() {
@@ -244,6 +291,28 @@
                 showMessage('Erro ao gerar o arquivo Excel.', true);
             }
         });
+
+        function generateExcelOffline() {
+          getDataFromDB().then((data) => {
+            if (data.length === 0) {
+              alert("Nenhum dado disponível para gerar a planilha.");
+              return;
+            }
+
+            // Cria a planilha
+            const worksheet = XLSX.utils.json_to_sheet(data);
+            const workbook = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(workbook, worksheet, "Inspecao");
+
+            // Salva o arquivo Excel
+            XLSX.writeFile(workbook, "inspecao_offline.xlsx");
+          }).catch((error) => {
+            console.error("Erro ao gerar a planilha:", error);
+          });
+        }
+
+        // Botão para gerar a planilha offline
+        document.getElementById('generate-excel-offline').addEventListener('click', generateExcelOffline);
 
         document.getElementById('reset-data').addEventListener('click', async function() {
             const response = await fetch('/reset', { method: 'POST' });
