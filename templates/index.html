@@ -352,7 +352,7 @@
 
                 // Obtém os dados do IndexedDB
                 const data = await getDataFromDB();
-                console.log("Dados para preencher a planilha:", data);
+                console.log("Dados recuperados do IndexedDB:", data);
 
                 if (data.length === 0) {
                   alert("Nenhum dado disponível para gerar a planilha.");
@@ -363,19 +363,19 @@
                 let startRow = 6; // Supondo que os dados começam na linha 6
                 data.forEach((row, index) => {
                   XLSX.utils.sheet_add_aoa(worksheet, [[
-                    row["Nº da Torre"] || "",
-                    row["Parte Afetada (Macro)"] || "",
-                    row["Parte Afetada (Micro)"] || "",
-                    row["Sintomas Dano (Macro)"] || "",
-                    row["Sintomas Dano (Micro)"] || "",
-                    row["Data Inspeção"] || "",
-                    row["Data Nec. Exec."] || "",
-                    row["Prioridade"] || "",
-                    row["Texto do Item"] || "",
-                    row["Observação (Texto da Situação)"] || ""
+                    row["Nº da Torre"] || "",               // Coluna A
+                    row["Parte Afetada (Macro)"] || "",    // Coluna B
+                    row["Parte Afetada (Micro)"] || "",    // Coluna C
+                    row["Sintomas Dano (Macro)"] || "",    // Coluna D
+                    row["Sintomas Dano (Micro)"] || "",    // Coluna E
+                    row["Data Inspeção"] || "",            // Coluna F
+                    row["Data Nec. Exec."] || "",          // Coluna H
+                    row["Prioridade"] || "",               // Coluna J
+                    row["Texto do Item"] || "",            // Coluna M
+                    row["Observação (Texto da Situação)"] || "" // Coluna P
                   ]], { origin: `A${startRow + index}` });
                 });
-
+                
                 // Salva o arquivo Excel
                 XLSX.writeFile(workbook, "inspecao_offline.xlsx");
                 alert("Planilha gerada com sucesso!");
