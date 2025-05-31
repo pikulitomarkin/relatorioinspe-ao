@@ -325,86 +325,80 @@
           event.target.reset();
         });
 
-        document.getElementById('generate-excel').addEventListener('click', async function() {
-            const response = await fetch('/finalize');
-            if (response.ok) {
-                const blob = await response.blob();
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.style.display = 'none';
-                a.href = url;
-                a.download = 'dados.xlsx';
-                document.body.appendChild(a);
-                a.click();
-                window.URL.revokeObjectURL(url);
-                showMessage('Arquivo Excel gerado com sucesso!');
-            } else {
-                showMessage('Erro ao gerar o arquivo Excel.', true);
-            }
-        });
+     
 
         async function generateExcelOffline() {
-          try {
-            // Carrega o modelo de planilha
-            const response = await fetch('/static/modelo.xlsx');
-            const arrayBuffer = await response.arrayBuffer();
-            const workbook = XLSX.read(arrayBuffer, { type: 'array' });
+            console.log("Botão 'Gerar Planilha Inspeção' clicado.");
+            try {
+                // Carrega o modelo de planilha
+                const response = await fetch('/static/modelo.xlsx');
+                if (!response.ok) {
+                  throw new Error("Erro ao carregar o modelo de planilha.");
+                }
+                const arrayBuffer = await response.arrayBuffer();
+                const workbook = XLSX.read(arrayBuffer, { type: 'array' });
 
-            // Seleciona a primeira aba da planilha
-            const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+                // Seleciona a primeira aba da planilha
+                const worksheet = workbook.Sheets[workbook.SheetNames[0]];
 
-            // Obtém os valores padrão
-            const defaultValues = await getDefaultValues();
+                // Obtém os valores padrão
+                const defaultValues = await getDefaultValues();
+                console.log("Valores padrão para o cabeçalho:", defaultValues);
 
-            // Preenche os valores padrão no cabeçalho
-            worksheet["C3"] = { v: defaultValues["Nº da Ordem"] || "" };
-            worksheet["J3"] = { v: defaultValues["Especialidade"] || "" };
-            worksheet["Q3"] = { v: defaultValues["LT"] || "" };
+                // Preenche os valores padrão no cabeçalho
+                worksheet["C3"] = { v: defaultValues["Nº da Ordem"] || "" };
+                worksheet["J3"] = { v: defaultValues["Especialidade"] || "" };
+                worksheet["Q3"] = { v: defaultValues["LT"] || "" };
 
-            // Obtém os dados do IndexedDB
-            const data = await getDataFromDB();
-            if (data.length === 0) {
-              alert("Nenhum dado disponível para gerar a planilha.");
-              return;
-            }
+                // Obtém os dados do IndexedDB
+                const data = await getDataFromDB();
+                console.log("Dados para preencher a planilha:", data);
 
-            // Preenche os dados na planilha
-            let startRow = 6; // Supondo que os dados começam na linha 6
-            data.forEach((row, index) => {
-              XLSX.utils.sheet_add_aoa(worksheet, [[
-                row["Nº da Torre"] || "",
-                row["Parte Afetada (Macro)"] || "",
-                row["Parte Afetada (Micro)"] || "",
-                row["Sintomas Dano (Macro)"] || "",
-                row["Sintomas Dano (Micro)"] || "",
-                row["Data Inspeção"] || "",
-                row["Data Nec. Exec."] || "",
-                row["Prioridade"] || "",
-                row["Texto do Item"] || "",
-                row["Observação (Texto da Situação)"] || ""
-              ]], { origin: `A${startRow + index}` });
-            });
+                if (data.length === 0) {
+                  alert("Nenhum dado disponível para gerar a planilha.");
+                  return;
+                }
 
-            // Salva o arquivo Excel
-            XLSX.writeFile(workbook, "inspecao_offline.xlsx");
-            alert("Planilha gerada com sucesso!");
-          } catch (error) {
-            console.error("Erro ao gerar a planilha offline:", error);
-            alert("Erro ao gerar a planilha offline.");
-          }
+                // Preenche os dados na planilha
+                let startRow = 6; // Supondo que os dados começam na linha 6
+                data.forEach((row, index) => {
+                  XLSX.utils.sheet_add_aoa(worksheet, [[
+                    row["Nº da Torre"] || "",
+                    row["Parte Afetada (Macro)"] || "",
+                    row["Parte Afetada (Micro)"] || "",
+                    row["Sintomas Dano (Macro)"] || "",
+                    row["Sintomas Dano (Micro)"] || "",
+                    row["Data Inspeção"] || "",
+                    row["Data Nec. Exec."] || "",
+                    row["Prioridade"] || "",
+                    row["Texto do Item"] || "",
+                    row["Observação (Texto da Situação)"] || ""
+                  ]], { origin: `A${startRow + index}` });
+                });
+
+                // Salva o arquivo Excel
+                XLSX.writeFile(workbook, "inspecao_offline.xlsx");
+                alert("Planilha gerada com sucesso!");
+              } catch (error) {
+                console.error("Erro ao gerar a planilha offline:", error);
+                alert("Erro ao gerar a planilha offline.");
+              }
         }
 
         // Botão para gerar a planilha offline
         document.getElementById('generate-excel-offline').addEventListener('click', generateExcelOffline);
 
         document.getElementById('reset-data').addEventListener('click', function () {
+            console.log("Botão 'Finalizar Inspeção' clicado.");
             if (confirm("Tem certeza de que deseja reiniciar os dados?")) {
                 initDB().then((db) => {
+                    console.log("Acessando o IndexedDB para limpar os dados...");
                     const transaction = db.transaction(storeName, "readwrite");
                     const store = transaction.objectStore(storeName);
                     const clearRequest = store.clear();
 
                     clearRequest.onsuccess = () => {
+                        console.log("Dados reiniciados com sucesso!");
                         alert("Dados reiniciados com sucesso!");
                     };
 
@@ -412,6 +406,9 @@
                         console.error("Erro ao reiniciar os dados:", event.target.error);
                         alert("Erro ao reiniciar os dados.");
                     };
+                }).catch((error) => {
+                    console.error("Erro ao acessar o IndexedDB:", error);
+                    alert("Erro ao acessar o banco de dados.");
                 });
             }
         });
