@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Inspeção</title>
+    <style>
+        /* Estilo geral */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* Container do formulário */
+        .form-container {
+            background-color: #fff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px; /* Espaçamento entre os campos */
+            margin-bottom: 15px; /* Espaçamento entre as linhas */
+        }
+
+        .form-row div {
+            flex: 1; /* Faz com que os campos ocupem o mesmo espaço */
+        }
+
+        .form-row label {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .form-row input {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-row textarea,
+        .form-row button {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-row textarea {
+            resize: vertical;
+        }
+
+        .form-row button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-row button:hover {
+            background-color: #45a049;
+        }
+
+        .form-row button#reset-data {
+            background-color: #f44336;
+        }
+
+        .form-row button#reset-data:hover {
+            background-color: #d32f2f;
+        }
+
+        /* Mensagem de feedback */
+        #message-area {
+            margin-top: 20px;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Relatório de Inspeção</h1>
+        <form id="inspection-form">
+            <div class="form-row">
+                <div>
+                    <label for="ordem">Nº da Ordem:</label>
+                    <input type="text" id="ordem" name="Nº da Ordem">
+                </div>
+                <div>
+                    <label for="especialidade">Especialidade:</label>
+                    <input type="text" id="especialidade" name="Especialidade">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <label for="lt">LT:</label>
+                    <input type="text" id="lt" name="LT">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <label for="numero_torre">Nº da Torre:</label>
+                    <input type="text" id="numero_torre" name="Nº da Torre" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <label for="parte_macro">Parte Afetada (Macro):</label>
+                    <input type="text" id="parte_macro" name="Parte Afetada (Macro)" required>
+                </div>
+                <div>
+                    <label for="parte_micro">Parte Afetada (Micro):</label>
+                    <input type="text" id="parte_micro" name="Parte Afetada (Micro)" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <label for="sintoma_macro">Sintomas Dano (Macro):</label>
+                    <input type="text" id="sintoma_macro" name="Sintomas Dano (Macro)" required>
+                </div>
+                <div>
+                    <label for="sintoma_micro">Sintomas Dano (Micro):</label>
+                    <input type="text" id="sintoma_micro" name="Sintomas Dano (Micro)" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <label for="data_inspecao">Data Inspeção:</label>
+                    <input type="date" id="data_inspecao" name="Data Inspeção" required>
+                </div>
+                <div>
+                    <label for="data_exec">Data Nec. Exec.:</label>
+                    <input type="date" id="data_exec" name="Data Nec. Exec." required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <label for="prioridade">Prioridade:</label>
+                    <input type="text" id="prioridade" name="Prioridade">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <label for="texto_item">Texto do Item:</label>
+                    <textarea id="texto_item" name="Texto do Item"></textarea>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <label for="observacao">Observação (Texto da Situação):</label>
+                    <textarea id="observacao" name="Observação (Texto da Situação)"></textarea>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <button type="submit">Enviar</button>
+                <button type="button" id="generate-excel">Gerar Arquivo Excel</button>
+                <button type="button" id="reset-data">Reiniciar</button>
+            </div>
+        </form>
+        <div id="message-area"></div>
+    </div>
+
+    <script>
+        function showMessage(message, isError = false) {
+            const messageArea = document.getElementById('message-area');
+            messageArea.style.color = isError ? 'red' : 'green';
+            messageArea.textContent = message;
+            setTimeout(() => {
+                messageArea.textContent = '';
+            }, 5000);
+        }
+
+        document.getElementById('inspection-form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+
+            const response = await fetch('/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                showMessage('Dados enviados com sucesso!');
+                event.target.reset();
+            } else {
+                const error = await response.json();
+                showMessage(`Erro: ${error.message}`, true);
+            }
+        });
+
+        document.getElementById('generate-excel').addEventListener('click', async function() {
+            const response = await fetch('/finalize');
+            if (response.ok) {
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = 'dados.xlsx';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                showMessage('Arquivo Excel gerado com sucesso!');
+            } else {
+                showMessage('Erro ao gerar o arquivo Excel.', true);
+            }
+        });
+
+        document.getElementById('reset-data').addEventListener('click', async function() {
+            const response = await fetch('/reset', { method: 'POST' });
+            if (response.ok) {
+                showMessage('Dados reiniciados com sucesso!');
+            } else {
+                showMessage('Erro ao reiniciar os dados.', true);
+            }
+        });
+
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker
+              .register("/service-worker.js")
+              .then((registration) => {
+                console.log("Service Worker registrado com sucesso:", registration);
+              })
+              .catch((error) => {
+                console.log("Falha ao registrar o Service Worker:", error);
+              });
+          }
+    </script>
+</body>
+</html>
