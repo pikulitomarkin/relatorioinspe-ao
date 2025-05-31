@@ -209,6 +209,9 @@
               if (!db.objectStoreNames.contains(storeName)) {
                 db.createObjectStore(storeName, { keyPath: "id", autoIncrement: true });
               }
+              if (!db.objectStoreNames.contains("defaultValues")) {
+                db.createObjectStore("defaultValues", { keyPath: "key" });
+              }
             };
 
             request.onsuccess = (event) => {
@@ -253,6 +256,47 @@
           });
         }
 
+        function saveDefaultValues(defaults) {
+          initDB().then((db) => {
+            const transaction = db.transaction("defaultValues", "readwrite");
+            const store = transaction.objectStore("defaultValues");
+
+            Object.keys(defaults).forEach((key) => {
+              store.put({ key: key, value: defaults[key] });
+            });
+
+            transaction.oncomplete = () => {
+              console.log("Valores padrão salvos no IndexedDB.");
+            };
+
+            transaction.onerror = (event) => {
+              console.error("Erro ao salvar valores padrão no IndexedDB:", event.target.error);
+            };
+          });
+        }
+
+        function getDefaultValues() {
+          return new Promise((resolve, reject) => {
+            initDB().then((db) => {
+              const transaction = db.transaction("defaultValues", "readonly");
+              const store = transaction.objectStore("defaultValues");
+              const request = store.getAll();
+
+              request.onsuccess = (event) => {
+                const result = event.target.result.reduce((acc, item) => {
+                  acc[item.key] = item.value;
+                  return acc;
+                }, {});
+                resolve(result);
+              };
+
+              request.onerror = (event) => {
+                reject(event.target.error);
+              };
+            });
+          });
+        }
+
         function showMessage(message, isError = false) {
             const messageArea = document.getElementById('message-area');
             messageArea.style.color = isError ? 'red' : 'green';
@@ -267,6 +311,13 @@
 
           const formData = new FormData(event.target);
           const data = Object.fromEntries(formData.entries());
+
+          // Salva os valores padrão
+          saveDefaultValues({
+            "Nº da Ordem": data["Nº da Ordem"],
+            "Especialidade": data["Especialidade"],
+            "LT": data["LT"]
+          });
 
           // Salva os dados no IndexedDB
           saveDataToDB(data);
@@ -302,6 +353,14 @@
 
             // Seleciona a primeira aba da planilha
             const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+
+            // Obtém os valores padrão
+            const defaultValues = await getDefaultValues();
+
+            // Preenche os valores padrão no cabeçalho
+            worksheet["C3"] = { v: defaultValues["Nº da Ordem"] || "" };
+            worksheet["J3"] = { v: defaultValues["Especialidade"] || "" };
+            worksheet["Q3"] = { v: defaultValues["LT"] || "" };
 
             // Obtém os dados do IndexedDB
             const data = await getDataFromDB();
@@ -339,12 +398,22 @@
         // Botão para gerar a planilha offline
         document.getElementById('generate-excel-offline').addEventListener('click', generateExcelOffline);
 
-        document.getElementById('reset-data').addEventListener('click', async function() {
-            const response = await fetch('/reset', { method: 'POST' });
-            if (response.ok) {
-                showMessage('Dados reiniciados com sucesso!');
-            } else {
-                showMessage('Erro ao reiniciar os dados.', true);
+        document.getElementById('reset-data').addEventListener('click', function () {
+            if (confirm("Tem certeza de que deseja reiniciar os dados?")) {
+                initDB().then((db) => {
+                    const transaction = db.transaction(storeName, "readwrite");
+                    const store = transaction.objectStore(storeName);
+                    const clearRequest = store.clear();
+
+                    clearRequest.onsuccess = () => {
+                        alert("Dados reiniciados com sucesso!");
+                    };
+
+                    clearRequest.onerror = (event) => {
+                        console.error("Erro ao reiniciar os dados:", event.target.error);
+                        alert("Erro ao reiniciar os dados.");
+                    };
+                });
             }
         });
 
