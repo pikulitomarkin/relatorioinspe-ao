@@ -189,6 +189,7 @@
                 <button type="submit">Enviar Dados</button>
                 <button type="button" id="generate-excel-offline">Gerar Planilha Inspeção</button>
                 <button type="button" id="reset-data">Finalizar Inspeção</button>
+                <button type="button" id="leia-me" onclick="window.location.href='leia-me.html'">Leia-me</button>
             </div>
         </form>
         <div id="message-area"></div>
@@ -346,9 +347,9 @@
                 console.log("Valores padrão para o cabeçalho:", defaultValues);
 
                 // Preenche os valores padrão no cabeçalho
-                worksheet["C3"] = { v: defaultValues["Nº da Ordem"] || "" };
-                worksheet["G3"] = { v: defaultValues["Especialidade"] || "" };
-                worksheet["I3"] = { v: defaultValues["LT"] || "" };
+                worksheet["C3"] = { v: defaultValues["Nº da Ordem"] || "" }; // Nº da Ordem
+                worksheet["G3"] = { v: defaultValues["Especialidade"] || "" }; // Especialidade
+                worksheet["I3"] = { v: defaultValues["LT"] || "" }; // LT
 
                 // Obtém os dados do IndexedDB
                 const data = await getDataFromDB();
