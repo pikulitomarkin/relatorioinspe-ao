@@ -100,6 +100,49 @@
             font-size: 16px;
             text-align: center;
         }
+
+        /* Estilo do modal */
+        #modal-leia-me {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #modal-leia-me > div {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+
+        #modal-leia-me button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #f44336;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        #modal-leia-me h2 {
+            margin-top: 0;
+        }
+
+        #modal-leia-me ol {
+            padding-left: 20px;
+        }
     </style>
 </head>
 <body>
@@ -189,10 +232,27 @@
                 <button type="submit">Enviar Dados</button>
                 <button type="button" id="generate-excel-offline">Gerar Planilha Inspeção</button>
                 <button type="button" id="reset-data">Finalizar Inspeção</button>
-                <button type="button" id="leia-me" onclick="window.location.href='leia-me.html'">Leia-me</button>
+                <button type="button" id="leia-me" onclick="window.location.href='/static/leia-me.html'">Leia-me</button>
             </div>
         </form>
         <div id="message-area"></div>
+    </div>
+
+    <!-- Modal Leia-me -->
+    <div id="modal-leia-me" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:9999; justify-content:center; align-items:center;">
+      <div style="background:#fff; padding:30px; border-radius:8px; max-width:500px; width:90%; position:relative;">
+        <button onclick="fecharLeiaMe()" style="position:absolute; top:10px; right:10px; background:#f44336; color:#fff; border:none; border-radius:4px; padding:5px 10px; cursor:pointer;">Fechar</button>
+        <h2>Como utilizar o programa</h2>
+        <ol>
+          <li>Preencha todos os campos do formulário.</li>
+          <li>Clique em <b>Enviar Dados</b> para salvar localmente.</li>
+          <li>Para gerar a planilha, clique em <b>Gerar Planilha Inspeção</b>.</li>
+          <li>Para finalizar (somente após ter gerado a planilha), clique em <b>Finalizar Inspeção</b>.</li>
+          <li>Os dados do cabeçalho só mudam se você preencher novamente os campos de cabeçalho.</li>
+          <li>Funciona offline após o primeiro acesso.</li>
+        </ol>
+        <p>Em caso de dúvidas, procure o suporte.</p>
+      </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
@@ -312,14 +372,16 @@
           const formData = new FormData(event.target);
           const data = Object.fromEntries(formData.entries());
 
-          // Salva os valores padrão
-          saveDefaultValues({
-            "Nº da Ordem": data["Nº da Ordem"],
-            "Especialidade": data["Especialidade"],
-            "LT": data["LT"]
-          });
+          // Só atualiza os valores padrão se os campos não estiverem vazios
+          let defaultValuesToSave = {};
+          if (data["Nº da Ordem"]) defaultValuesToSave["Nº da Ordem"] = data["Nº da Ordem"];
+          if (data["Especialidade"]) defaultValuesToSave["Especialidade"] = data["Especialidade"];
+          if (data["LT"]) defaultValuesToSave["LT"] = data["LT"];
+          if (Object.keys(defaultValuesToSave).length > 0) {
+            saveDefaultValues(defaultValuesToSave);
+          }
 
-          // Salva os dados no IndexedDB
+          // Salva os dados no IndexedDB normalmente
           saveDataToDB(data);
 
           alert("Dados salvos localmente!");
