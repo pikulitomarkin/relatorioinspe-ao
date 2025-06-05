@@ -6,9 +6,9 @@ const urlsToCache = [
   "/static/icons/icon-192x192.png", // Ícone
   "/static/icons/icon-512x512.png", // Ícone
   "/templates/index.html", // Página HTML
-  "/static/leia-me.html", //Pagina Leia-me
-  "/static/index.html", // Pagina Principal
-  "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" // Biblioteca para gerar Excel
+  "/templates/leia-me.html", // Página de Leia-me
+  "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js", // Biblioteca para gerar Excel
+  "/static/catalogo-defeitos.pdf"
 ];
 
 // Instala o Service Worker e armazena os arquivos no cache
