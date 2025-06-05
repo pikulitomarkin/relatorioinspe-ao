@@ -233,6 +233,7 @@
                 <button type="button" id="generate-excel-offline">Gerar Planilha Inspeção</button>
                 <button type="button" id="reset-data">Finalizar Inspeção</button>
                 <button type="button" id="leia-me" onclick="window.location.href='/static/leia-me.html'">Leia-me</button>
+                <button type="button" id="catalogo-defeitos" onclick="abrirCatalogoDefeitos()">Catálogo de Defeitos</button>
             </div>
         </form>
         <div id="message-area"></div>
@@ -486,6 +487,10 @@
                 console.log("Falha ao registrar o Service Worker:", error);
               });
           }
+
+          function abrirCatalogoDefeitos() {
+  window.open('/static/catalogo-defeitos.pdf', '_blank');
+}
     </script>
 </body>
 </html>
