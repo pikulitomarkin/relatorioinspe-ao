@@ -5,10 +5,11 @@ const urlsToCache = [
   "/static/service-worker.js", // Service Worker
   "/static/icons/icon-192x192.png", // Ícone
   "/static/icons/icon-512x512.png", // Ícone
-  "/templates/index.html", // Página HTML
-  "/templates/leia-me.html", // Página de Leia-me
-  "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js", // Biblioteca para gerar Excel
-  "/static/catalogo-defeitos.pdf"
+  "/static/leia-me.html", // Corrija o caminho se necessário
+  "/static/catalogo-defeitos.pdf", // Certifique-se que está acessível
+  "/templates/index.html", // Página principal
+  "/static/index.html",
+  "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" // Biblioteca para gerar Excel
 ];
 
 // Instala o Service Worker e armazena os arquivos no cache

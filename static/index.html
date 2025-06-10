@@ -210,7 +210,16 @@
             <div class="form-row">
                 <div>
                     <label for="prioridade">Prioridade:</label>
-                    <input type="text" id="prioridade" name="Prioridade">
+                    <select id="prioridade" name="Prioridade" required>
+                        <option value="">Selecione...</option>
+                        <option value="Emergência">Emergência</option>
+                        <option value="Urgência">Urgência</option>
+                        <option value="Alta">Alta</option>
+                        <option value="Média">Média</option>
+                        <option value="Baixa">Baixa</option>
+                        <option value="Monitoramento">Monitoramento</option>
+                        <option value="Por Oportunidade">Por Oportunidade</option>
+                    </select>
                 </div>
             </div>
 
