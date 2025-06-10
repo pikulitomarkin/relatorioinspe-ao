@@ -500,6 +500,54 @@
           function abrirCatalogoDefeitos() {
   window.open('/static/catalogo-defeitos.pdf', '_blank');
 }
+document.getElementById('prioridade').addEventListener('change', function () {
+    const prioridade = this.value;
+    const dataInspecaoInput = document.getElementById('data_inspecao');
+    const dataExecInput = document.getElementById('data_exec');
+    const hoje = new Date();
+
+    // Define a data de inspeção para hoje
+    const yyyy = hoje.getFullYear();
+    const mm = String(hoje.getMonth() + 1).padStart(2, '0');
+    const dd = String(hoje.getDate()).padStart(2, '0');
+    const hojeStr = `${yyyy}-${mm}-${dd}`;
+    dataInspecaoInput.value = hojeStr;
+
+    // Calcula a data de execução conforme a prioridade
+    let dataExec = new Date(hoje);
+    switch (prioridade) {
+        case 'Emergência':
+            dataExec.setDate(dataExec.getDate() + 1);
+            break;
+        case 'Urgência':
+            dataExec.setDate(dataExec.getDate() + 2);
+            break;
+        case 'Alta':
+            dataExec.setMonth(dataExec.getMonth() + 1);
+            break;
+        case 'Média':
+            dataExec.setMonth(dataExec.getMonth() + 3);
+            break;
+        case 'Baixa':
+            dataExec.setFullYear(dataExec.getFullYear() + 1);
+            break;
+        case 'Monitoramento':
+        case 'Por Oportunidade':
+            dataExec.setFullYear(dataExec.getFullYear() + 10);
+            break;
+        default:
+            dataExec = '';
+    }
+
+    if (dataExec instanceof Date && !isNaN(dataExec)) {
+        const yyyyExec = dataExec.getFullYear();
+        const mmExec = String(dataExec.getMonth() + 1).padStart(2, '0');
+        const ddExec = String(dataExec.getDate()).padStart(2, '0');
+        dataExecInput.value = `${yyyyExec}-${mmExec}-${ddExec}`;
+    } else {
+        dataExecInput.value = '';
+    }
+});
     </script>
 </body>
 </html>
