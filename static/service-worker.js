@@ -1,4 +1,4 @@
-const CACHE_NAME = "inspecao-cache-v1";
+const CACHE_NAME = "inspecao-cache-v2"; // Atualize a versão ao mudar arquivos!
 const urlsToCache = [
   "/", // Página inicial
   "/static/manifest.json", // Manifesto do PWA
@@ -7,9 +7,9 @@ const urlsToCache = [
   "/static/icons/icon-512x512.png", // Ícone
   "/static/leia-me.html", // Corrija o caminho se necessário
   "/static/catalogo-defeitos.pdf", // Certifique-se que está acessível
-  "/templates/index.html", // Página principal
+  "/static/catalogo.json", // Adicione o catálogo para funcionar offline
   "/static/index.html",
-  "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" // Biblioteca para gerar Excel
+  "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js", // Biblioteca para gerar Excel
 ];
 
 // Instala o Service Worker e armazena os arquivos no cache
