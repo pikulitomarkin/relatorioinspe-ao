@@ -549,65 +549,78 @@ document.getElementById('prioridade').addEventListener('change', function () {
     }
 });
 
-fetch('/static/catalogo.json')
-  .then(response => response.json())
-  .then(data => {
-    // Preencher Parte Afetada Macro
-    const parteMacroSet = new Set(data.map(item => item.parte_afetada_macro));
-    const parteMacroSelect = document.getElementById('parte_macro');
-    parteMacroSet.forEach(valor => {
-      if (valor) {
-        const option = document.createElement('option');
-        option.value = valor;
-        option.textContent = valor;
-        parteMacroSelect.appendChild(option);
-      }
-    });
+    // Remove blocos duplicados e use apenas este para popular os selects corretamente!
+    fetch('/static/catalogo.json')
+      .then(response => response.json())
+      .then(catalogo => {
+        function corPorPrefixo(texto) {
+    if (texto.startsWith('ESMT')) return 'red';
+    if (texto.startsWith('CAIS')) return 'deepskyblue';
+    if (texto.startsWith('CNDT')) return 'orange';
+    if (texto.startsWith('FXSR')) return 'purple';
+    if (texto.startsWith('PRRS')) return 'navy';
+    if (texto.startsWith('ESTAC')) return 'green';
+    if (texto.startsWith('SATER')) return 'brown';
+    return '';
+}
 
-    // Quando selecionar Macro, filtra Micro
-    parteMacroSelect.addEventListener('change', function() {
-      const parteMicroSelect = document.getElementById('parte_micro');
-      parteMicroSelect.innerHTML = '';
-      const micros = data.filter(item => item.parte_afetada_macro === this.value)
-                         .map(item => item.parte_afetada_micro);
-      [...new Set(micros)].forEach(valor => {
-        if (valor) {
+        // Preencher Parte Afetada Macro
+        const parteMacroSelect = document.getElementById('parte_macro');
+        parteMacroSelect.innerHTML = '<option value="">Selecione...</option>';
+        Object.keys(catalogo.parte_afetada).forEach(macro => {
           const option = document.createElement('option');
-          option.value = valor;
-          option.textContent = valor;
-          parteMicroSelect.appendChild(option);
-        }
-      });
-    });
+          option.value = macro;
+          option.textContent = macro;
+          option.style.color = corPorPrefixo(macro);
+          parteMacroSelect.appendChild(option);
+        });
 
-    // Preencher Sintoma Dano Macro
-    const sintomaMacroSet = new Set(data.map(item => item.sintoma_dano_macro));
-    const sintomaMacroSelect = document.getElementById('sintoma_macro');
-    sintomaMacroSet.forEach(valor => {
-      if (valor) {
-        const option = document.createElement('option');
-        option.value = valor;
-        option.textContent = valor;
-        sintomaMacroSelect.appendChild(option);
-      }
-    });
+        // Quando selecionar Macro, filtra Micro
+        parteMacroSelect.addEventListener('change', function() {
+          const parteMicroSelect = document.getElementById('parte_micro');
+          parteMicroSelect.innerHTML = '<option value="">Selecione...</option>';
+          const macro = this.value;
+          if (macro && catalogo.parte_afetada[macro]) {
+            catalogo.parte_afetada[macro].forEach(micro => {
+              const option = document.createElement('option');
+              option.value = micro;
+              option.textContent = micro;
+              option.style.color = corPorPrefixo(macro); // Usa a cor do macro
+              parteMicroSelect.appendChild(option);
+            });
+          }
+        });
 
-    // Quando selecionar Macro, filtra Micro
-    sintomaMacroSelect.addEventListener('change', function() {
-      const sintomaMicroSelect = document.getElementById('sintoma_micro');
-      sintomaMicroSelect.innerHTML = '';
-      const micros = data.filter(item => item.sintoma_dano_macro === this.value)
-                         .map(item => item.sintoma_dano_micro);
-      [...new Set(micros)].forEach(valor => {
-        if (valor) {
+        // Preencher Sintoma Dano Macro
+        const sintomaMacroSelect = document.getElementById('sintoma_macro');
+        sintomaMacroSelect.innerHTML = '<option value="">Selecione...</option>';
+        Object.keys(catalogo.sintoma_dano).forEach(macro => {
           const option = document.createElement('option');
-          option.value = valor;
-          option.textContent = valor;
-          sintomaMicroSelect.appendChild(option);
-        }
+          option.value = macro;
+          option.textContent = macro;
+          option.style.color = corPorPrefixo(macro);
+          sintomaMacroSelect.appendChild(option);
+        });
+
+        // Quando selecionar Macro, filtra Micro
+        sintomaMacroSelect.addEventListener('change', function() {
+          const sintomaMicroSelect = document.getElementById('sintoma_micro');
+          sintomaMicroSelect.innerHTML = '<option value="">Selecione...</option>';
+          const macro = this.value;
+          if (macro && catalogo.sintoma_dano[macro]) {
+            catalogo.sintoma_dano[macro].forEach(micro => {
+              const option = document.createElement('option');
+              option.value = micro;
+              option.textContent = micro;
+              option.style.color = corPorPrefixo(macro); // Usa a cor do macro
+              sintomaMicroSelect.appendChild(option);
+            });
+          }
+        });
+      })
+      .catch(error => {
+        alert('Erro ao carregar catálogo de defeitos: ' + error.message);
       });
-    });
-  });
     </script>
 </body>
 </html>
