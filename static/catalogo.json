@@ -1,728 +1,344 @@
-[
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-P1 FUNDAÇÃO",
-    "parte_afetada_micro": "C612 CONCRETO",
-    "sintoma_dano_macro": "CADEIA CAIS-P1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "C186 CAMPÂNULA"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-P1 FUNDAÇÃO",
-    "parte_afetada_micro": "G775 GRELHA",
-    "sintoma_dano_macro": "CADEIA CAIS-P1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "C972 CUPILHA"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-P1 FUNDAÇÃO",
-    "parte_afetada_micro": "S710 STUB",
-    "sintoma_dano_macro": "CADEIA CAIS-P1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "I882 ISOLADOR"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-P1 FUNDAÇÃO",
-    "parte_afetada_micro": "ESMT-P2 ESTAI",
-    "sintoma_dano_macro": "CADEIA CAIS-P1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "P432 PINO"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-P1 FUNDAÇÃO",
-    "parte_afetada_micro": "A330 ALCA HELIFORMADA",
-    "sintoma_dano_macro": "CADEIA CAIS-P1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "CAIS-P2 POLIMÉRICO"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-P1 FUNDAÇÃO",
-    "parte_afetada_micro": "C021 CABO",
-    "sintoma_dano_macro": "CADEIA CAIS-P1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "A333 ALETA"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-P1 FUNDAÇÃO",
-    "parte_afetada_micro": "C690 CONEXÃO DO CONTRAPESO",
-    "sintoma_dano_macro": "CADEIA CAIS-P1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "B495 BASTÃO"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-P1 FUNDAÇÃO",
-    "parte_afetada_micro": "C717 CONJUNTO DE FIXACÃO INFERIOR",
-    "sintoma_dano_macro": "CADEIA CAIS-P1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "C972 CUPILHA"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-P1 FUNDAÇÃO",
-    "parte_afetada_micro": "C720 CONJUNTO DE FIXACÃO SUPERIOR",
-    "sintoma_dano_macro": "CADEIA CAIS-P1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "T402 TERMINAL LADO FASE"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-P1 FUNDAÇÃO",
-    "parte_afetada_micro": "D125 DEFENSA",
-    "sintoma_dano_macro": "CADEIA CAIS-P1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "T408 TERMINAL LADO TERRA"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-P1 FUNDAÇÃO",
-    "parte_afetada_micro": "H220 HASTE DE ANCORA",
-    "sintoma_dano_macro": "CADEIA CAIS-P1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "CAIS-P3 FERRAGEM LADO FASE"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-P1 FUNDAÇÃO",
-    "parte_afetada_micro": "M060 MANILHA E ACESSORIOS",
-    "sintoma_dano_macro": "CADEIA CAIS-P1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "A633 ARMADURA PRÉ-FORMADA"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-P1 FUNDAÇÃO",
-    "parte_afetada_micro": "R833 REVESTIMENTO AFLORAMENTO",
-    "sintoma_dano_macro": "CADEIA CAIS-P1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "B252 BALANCIM"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-P1 FUNDAÇÃO",
-    "parte_afetada_micro": "ESMT-P3 INTERLIGACÃO DOS MASTROS",
-    "sintoma_dano_macro": "CADEIA CAIS-P1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "C312 CENTELHADOR/CHIFRE"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-P1 FUNDAÇÃO",
-    "parte_afetada_micro": "C054 CABO INTERLIGAÇÃO",
-    "sintoma_dano_macro": "CADEIA CAIS-P1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "C693 CONEXÃO MECÂNICA"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-P1 FUNDAÇÃO",
-    "parte_afetada_micro": "C819 CONTRAPINO DA MANILHA",
-    "sintoma_dano_macro": "CADEIA CAIS-P1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "D810 DISPOSITIVOS ANTICORONA"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-P1 FUNDAÇÃO",
-    "parte_afetada_micro": "M054 MANILHA",
-    "sintoma_dano_macro": "CADEIA CAIS-P1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "G651 GRAMPO"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-P1 FUNDAÇÃO",
-    "parte_afetada_micro": "P720 PORCA DA MANILHA",
-    "sintoma_dano_macro": "CADEIA CAIS-P1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "P384 PESO ADICIONAL"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-P1 FUNDAÇÃO",
-    "parte_afetada_micro": "T396 TERMINAL DE COMPRESSÃO",
-    "sintoma_dano_macro": "CADEIA CAIS-P1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "CAIS-P4 FERRAGEM LADO TERRA"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-P1 FUNDAÇÃO",
-    "parte_afetada_micro": "ESMT-P4 ESTRUTURA",
-    "sintoma_dano_macro": "CADEIA CAIS-P1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "A717 ATERRAMENTO"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-P1 FUNDAÇÃO",
-    "parte_afetada_micro": "D125 DEFENSA",
-    "sintoma_dano_macro": "CADEIA CAIS-P1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "B525 BALANCIM"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-P1 FUNDAÇÃO",
-    "parte_afetada_micro": "D200 DELTA",
-    "sintoma_dano_macro": "CADEIA CAIS-P1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "C312 CENTELHADOR/CHIFRE"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-P1 FUNDAÇÃO",
-    "parte_afetada_micro": "E825 EXTENSÃO G434 GERAL",
-    "sintoma_dano_macro": "CADEIA CAIS-P1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "C693 CONEXÃO MECÂNICA D810 DISPOSITIVOS ANTICORONA"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-P1 CONDUTOR",
-    "parte_afetada_micro": "C627 CONDUTOR",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-P1 TERRENO",
-    "sintoma_dano_micro": "D210 DENTRO DA SERVIDÃO"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-P1 CONDUTOR",
-    "parte_afetada_micro": "E210 EMENDA COMPRESSÃO",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-P1 TERRENO",
-    "sintoma_dano_micro": "E345 ENTORNO DA ESTRUTURA"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-P1 CONDUTOR",
-    "parte_afetada_micro": "E225 EMENDA PRÉ-FORMADA",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-P1 TERRENO",
-    "sintoma_dano_micro": "F704 FORA DA SERVIDÃO"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-P1 CONDUTOR",
-    "parte_afetada_micro": "J498 JUMPER",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-P1 TERRENO",
-    "sintoma_dano_micro": "T726 TRAVESSIA"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-P1 CONDUTOR",
-    "parte_afetada_micro": "R637 REPARO",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-P1 TERRENO",
-    "sintoma_dano_micro": "FXSR-P2 CERCA"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-P1 CONDUTOR",
-    "parte_afetada_micro": "CNDT-P2 AMORTECEDOR",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-P1 TERRENO",
-    "sintoma_dano_micro": "D210 DENTRO DA SERVIDÃO"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-P1 CONDUTOR",
-    "parte_afetada_micro": "H550 HELICOIDAL",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-P1 TERRENO",
-    "sintoma_dano_micro": "E345 ENTORNO DA ESTRUTURA"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-P1 CONDUTOR",
-    "parte_afetada_micro": "O899 OUTROS",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-P1 TERRENO",
-    "sintoma_dano_micro": "F704 FORA DA SERVIDÃO"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-P1 CONDUTOR",
-    "parte_afetada_micro": "S705 STOCKBRIDGE",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-P1 TERRENO",
-    "sintoma_dano_micro": "FXSR-P3 VEGETAÇÃO EXÓTICA"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-P1 CONDUTOR",
-    "parte_afetada_micro": "CNDT-P3 ESPAÇADOR",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-P1 TERRENO",
-    "sintoma_dano_micro": "D210 DENTRO DA SERVIDÃO"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-P1 CONDUTOR",
-    "parte_afetada_micro": "E620 ESPAÇADOR-AMORTECEDOR",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-P1 TERRENO",
-    "sintoma_dano_micro": "E345 ENTORNO DA ESTRUTURA"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-P1 CONDUTOR",
-    "parte_afetada_micro": "E625 ESPAÇADOR-RÍGIDO",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-P1 TERRENO",
-    "sintoma_dano_micro": "F704 FORA DA SERVIDÃO"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-P1 CONDUTOR",
-    "parte_afetada_micro": "CNDT-P4 CONECTOR",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-P1 TERRENO",
-    "sintoma_dano_micro": "FXSR-P4 VEGETAÇÃO NATIVA"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-P1 CONDUTOR",
-    "parte_afetada_micro": "C363 CHAPA-CHAPA",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-P1 TERRENO",
-    "sintoma_dano_micro": "D210 DENTRO DA SERVIDÃO"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-P1 CONDUTOR",
-    "parte_afetada_micro": "C966 CUNHA",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-P1 TERRENO",
-    "sintoma_dano_micro": "E345 ENTORNO DA ESTRUTURA"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-P1 CONDUTOR",
-    "parte_afetada_micro": "P126 PARALELO",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-P1 TERRENO",
-    "sintoma_dano_micro": "F704 FORA DA SERVIDÃO"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-P1 CONDUTOR",
-    "parte_afetada_micro": "T360 TERMINAL APARAFUSADO",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-P1 TERRENO",
-    "sintoma_dano_micro": "FXSR-P5 CULTURA"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-P1 CONDUTOR",
-    "parte_afetada_micro": "T366 TERMINAL COMPRESSÃO",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-P1 TERRENO",
-    "sintoma_dano_micro": "D210 DENTRO DA SERVIDÃO"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-P1 CONDUTOR",
-    "parte_afetada_micro": "T480 TIPO T",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-P1 TERRENO",
-    "sintoma_dano_micro": "E345 ENTORNO DA ESTRUTURA"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-P1 CONDUTOR",
-    "parte_afetada_micro": "CNDT-P5 SINALIZAÇÃO",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-P1 TERRENO",
-    "sintoma_dano_micro": "F704 FORA DA SERVIDÃO"
-  },
-  {
-    "parte_afetada_macro": "PARA-RAIO PRRS-P1 CABO",
-    "parte_afetada_micro": "A045 ACESSÓRIOS DA ESCOTA",
-    "sintoma_dano_macro": "ACESSO ESTAC-P1 ACESSO",
-    "sintoma_dano_micro": "P270 PASSAGEM MOLHADA"
-  },
-  {
-    "parte_afetada_macro": "PARA-RAIO PRRS-P1 CABO",
-    "parte_afetada_micro": "C021 CABO",
-    "sintoma_dano_macro": "ACESSO ESTAC-P1 ACESSO",
-    "sintoma_dano_micro": "P660 PONTE"
-  },
-  {
-    "parte_afetada_macro": "PARA-RAIO PRRS-P1 CABO",
-    "parte_afetada_micro": "E215 EMENDA COMPRESSÃO",
-    "sintoma_dano_macro": "ACESSO ESTAC-P1 ACESSO",
-    "sintoma_dano_micro": "S420 SISTEMA DE DRENAGEM"
-  },
-  {
-    "parte_afetada_macro": "PARA-RAIO PRRS-P1 CABO",
-    "parte_afetada_micro": "E225 EMENDA PRÉ-FORMADA",
-    "sintoma_dano_macro": "ACESSO ESTAC-P1 ACESSO",
-    "sintoma_dano_micro": "V749 VEGETAÇÃO EXÓTICA"
-  },
-  {
-    "parte_afetada_macro": "PARA-RAIO PRRS-P1 CABO",
-    "parte_afetada_micro": "J498 JUMPER",
-    "sintoma_dano_macro": "ACESSO ESTAC-P1 ACESSO",
-    "sintoma_dano_micro": "V756 VEGETAÇÃO NATIVA"
-  },
-  {
-    "parte_afetada_macro": "PARA-RAIO PRRS-P1 CABO",
-    "parte_afetada_micro": "R637 REPARO",
-    "sintoma_dano_macro": "ACESSO ESTAC-P1 ACESSO",
-    "sintoma_dano_micro": "V826 VIA DE ACESSO"
-  },
-  {
-    "parte_afetada_macro": "PARA-RAIO PRRS-P1 CABO",
-    "parte_afetada_micro": "PRRS-P2 AMORTECEDOR",
-    "sintoma_dano_macro": "ACESSO ESTAC-P1 ACESSO",
-    "sintoma_dano_micro": "ESTAC-P2 PORTEIRA/COLCHETE"
-  },
-  {
-    "parte_afetada_macro": "PARA-RAIO PRRS-P1 CABO",
-    "parte_afetada_micro": "H550 HELICOIDAL",
-    "sintoma_dano_macro": "ACESSO ESTAC-P1 ACESSO",
-    "sintoma_dano_micro": "C096 CADEADO"
-  },
-  {
-    "parte_afetada_macro": "PARA-RAIO PRRS-P1 CABO",
-    "parte_afetada_micro": "O899 OUTROS",
-    "sintoma_dano_macro": "ACESSO ESTAC-P1 ACESSO",
-    "sintoma_dano_micro": "C513 COLCHETE"
-  },
-  {
-    "parte_afetada_macro": "PARA-RAIO PRRS-P1 CABO",
-    "parte_afetada_micro": "S705 STOCKBRIDGE",
-    "sintoma_dano_macro": "ACESSO ESTAC-P1 ACESSO",
-    "sintoma_dano_micro": "P728 PORTEIRA"
-  },
-  {
-    "parte_afetada_macro": "SISTEMA ATERRAMENTO SATER-P1 CABO",
-    "parte_afetada_micro": "C816 CONTRAPESO",
-    "sintoma_dano_macro": "Classificação: Interna",
-    "sintoma_dano_micro": ""
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "A102 ACÚMULO DE ÁGUA",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "A771 AUSÊNCIA DE COMPONENTE"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "A144 AFLORAMENTO",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "C909 CORROSÃO INTERMEDIÁRIA"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "A816 AVARIADO",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "C912 COROSSÃO PESADA"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "C570 COMPACTAÇÃO INADEQUADA",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "E240 EMPENAMENTO"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "C909 CORROSÃO INTERMEDIÁRIA",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "F720 \"FORA DE PRUMO OU EMTORÇÃO\""
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "C912 CORROSÃO PESADA",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "O031 OBJETO ESTRANHO"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "E445 EROSÃO DE GRANDE PORTE",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "P372 PERFURADO"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "E450 EROSÃO DE MÉDIO PORTE",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "P654 POLUÍDO"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "E455 EROSÃO DE PEQUENO PORTE",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "P729 POSIÇÃO INDEVIDA"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "F632 FISSURA",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "Q360 QUEBRA/ROMPIMENTO"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "ESMT-S2 ESTAI A147 AFROUXAMENTO",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "Q900 QUEIMADO"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "A771 AUSÊNCIA DE COMPONENTE",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "T780 TRINCA"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "C909 CORROSÃO INTERMEDIÁRIA C912 CORROSÃO PESADA D350 DESCONECTADO",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "CAIS-S2 POLIMÉRICO C909 CORROSÃO INTERMEDIÁRIA"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "E240 EMPENAMENTO F632 FISSURA Q360 QUEBRA/ROMPIMENTO T348 TENTOS PARTIDOS",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "C912 CORROSÃO PESADA D035 DANO POR ARCO DE POTÊNCIA D345 DESCOLORAÇÃO/GIZAMENTO E440 EROSÃO"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "ESMT-S3 INTERLIGAÇÃO DOS MASTROS A147 AFROUXAMENTO",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "F632 FISSURA"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "A771 AUSÊNCIA DE COMPONENTE",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "M114 MARCAS DE ATIVIDADE ELÉTRICA"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "C909 CORROSÃO INTERMEDIÁRIA",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "P294 PELE DE JACARÉ"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "C912 CORROSÃO PESADA",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "P372 PERFURADO"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "Q360 QUEBRA/ROMPIMENTO",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "Q360 QUEBRA/ROMPIMENTO"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "T348 TENTOS PARTIDOS",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "T774 TRILHAMENTO EXTERNO"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "ESMT-S4 ESTRUTURA A147 AFROUXAMENTO",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "CAIS-S3 FERRAGEM LADO FASE A147 AFROUXAMENTO"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "A771 AUSÊNCIA DE COMPONENTE C909 CORROSÃO INTERMEDIÁRIA C912 CORROSÃO PESADA",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "A771 AUSÊNCIA DE COMPONENTE C909 CORROSÃO INTERMEDIÁRIA"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "E240 EMPENAMENTO",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "C912 CORROSÃO PESADA"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "E330 ENTERRADO",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "E240 EMPENAMENTO"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "F632 FISSURA",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "F632 FISSURA"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "F720 FORA DE PRUMO OU EM TORÇÃO",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "P792 POSIÇÃO INDEVIDA"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "I525 INSETOS",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "Q360 QUEBRA/ROMPIMENTO"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "N715 NINHO DE AVES",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "Q180 QUEBRA (OBSOLETO)"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "Q360 QUEBRA/ROMPIMENTO",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "CAIS-S4 FERRAGEM LADO TERRA"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "Q720 QUEDA",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "A147 AFROUXAMENTO"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "ESMT-S5 SINALIZAÇÃO",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "A771 AUSÊNCIA DE COMPONENTE"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "A147 AFROUXAMENTO",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "C909 CORROSÃO INTERMEDIÁRIA"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "A771 AUSÊNCIA DE COMPONENTE",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "C912 CORROSÃO PESADA"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "D350 DESCONECTADO",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "E240 EMPENAMENTO"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "I091 ILEGÍVEL",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "F632 FISSURA"
-  },
-  {
-    "parte_afetada_macro": "ESTRUTURA ESMT-S1 FUNDAÇÃO",
-    "parte_afetada_micro": "I469 INFORMAÇÃO DESATUALIZADA",
-    "sintoma_dano_macro": "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES",
-    "sintoma_dano_micro": "P792 POSIÇÃO INDEVIDA"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-S1 CONDUTOR",
-    "parte_afetada_micro": "A147 AFROUXAMENTO",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-S1 TERRENO",
-    "sintoma_dano_micro": "C741 CONSTRUÇÃO IRREGULAR"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-S1 CONDUTOR",
-    "parte_afetada_micro": "A420 ALTURA CABO-SOLO BAIXO",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-S1 TERRENO",
-    "sintoma_dano_micro": "D900 DUTO IRREGULAR"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-S1 CONDUTOR",
-    "parte_afetada_micro": "C909 CORROSÃO INTERMEDIÁRIA",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-S1 TERRENO",
-    "sintoma_dano_micro": "E445 EROSÃO DE GRANDE PORTE"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-S1 CONDUTOR",
-    "parte_afetada_micro": "C912 CORROSÃO PESADA",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-S1 TERRENO",
-    "sintoma_dano_micro": "E450 EROSÃO DE MÉDIO PORTE"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-S1 CONDUTOR",
-    "parte_afetada_micro": "D820 DISTÂNCIA ELÉTRICA INSUFICIENTE",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-S1 TERRENO",
-    "sintoma_dano_micro": "E455 EROSÃO DE PEQUENO PORTE"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-S1 CONDUTOR",
-    "parte_afetada_micro": "O031 OBJETO ESTRANHO",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-S1 TERRENO",
-    "sintoma_dano_micro": "O217 OBSTÁCULO NATURAL"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-S1 CONDUTOR",
-    "parte_afetada_micro": "P708 PONTO QUENTE",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-S1 TERRENO",
-    "sintoma_dano_micro": "R252 REDE ELÉTRICA IRREGULAR"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-S1 CONDUTOR",
-    "parte_afetada_micro": "Q360 QUEBRA/ROMPIMENTO",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-S1 TERRENO",
-    "sintoma_dano_micro": "V833 VIA DE TRANSPORTE IRREGULAR"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-S1 CONDUTOR",
-    "parte_afetada_micro": "T348 TENTOS PARTIDOS",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-S1 TERRENO",
-    "sintoma_dano_micro": "R252 REDE DE TELECOMUNICAÇÃO IRREGULAR"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-S1 CONDUTOR",
-    "parte_afetada_micro": "CNDT-S2 AMORTECEDOR",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-S1 TERRENO",
-    "sintoma_dano_micro": "FXSR-S2 VEGETAÇÃO EXÓTICA"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-S1 CONDUTOR",
-    "parte_afetada_micro": "A147 AFROUXAMENTO",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-S1 TERRENO",
-    "sintoma_dano_micro": "C963 RISCO DE QUEIMADA"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-S1 CONDUTOR",
-    "parte_afetada_micro": "A771 AUSÊNCIA DE COMPONENTE",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-S1 TERRENO",
-    "sintoma_dano_micro": "V742 RISCO DE APROXIMAÇÃO"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-S1 CONDUTOR",
-    "parte_afetada_micro": "C909 CORROSÃO INTERMEDIÁRIA",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-S1 TERRENO",
-    "sintoma_dano_micro": "FXSR-S3 CERCA A768 AUSÊNCIA DE ATERRAMENTO A780 AUSÊNCIA DE SECCIONAMENTO"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-S1 CONDUTOR",
-    "parte_afetada_micro": "C912 CORROSÃO PESADA E240 EMPENAMENTO F632 FISSURA",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-S1 TERRENO",
-    "sintoma_dano_micro": "FXSR-S4 VEGETAÇÃO NATIVA C963 RISCO DE QUEIMADA V742 RISCO DE APROXIMAÇÃO"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-S1 CONDUTOR",
-    "parte_afetada_micro": "P792 POSIÇÃO INDEVIDA Q360 QUEBRA/ROMPIMENTO CNDT-S3 ESPAÇADOR",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-S1 TERRENO",
-    "sintoma_dano_micro": "FXSR-S5 CULTURA C963 RISCO DE QUEIMADAS"
-  },
-  {
-    "parte_afetada_macro": "CONDUTOR CNDT-S1 CONDUTOR",
-    "parte_afetada_micro": "A147 AFROUXAMENTO A771 AUSÊNCIA DE COMPONENTE",
-    "sintoma_dano_macro": "FAIXA DE SERVIDÃO FXSR-S1 TERRENO",
-    "sintoma_dano_micro": "V742 RISCO DE APROXIMAÇÃO"
-  },
-  {
-    "parte_afetada_macro": "PARA-RAIO PRRS-S1 CABO",
-    "parte_afetada_micro": "A147 AFROUXAMENTO",
-    "sintoma_dano_macro": "SISTEMA ATERRAMENTO SATER-S1 CABO",
-    "sintoma_dano_micro": "A144 AFLORAMENTO"
-  },
-  {
-    "parte_afetada_macro": "PARA-RAIO PRRS-S1 CABO",
-    "parte_afetada_micro": "A771 AUSÊNCIA DE COMPONENTE",
-    "sintoma_dano_macro": "SISTEMA ATERRAMENTO SATER-S1 CABO",
-    "sintoma_dano_micro": "A771 AUSÊNCIA DE COMPONENTE"
-  },
-  {
-    "parte_afetada_macro": "PARA-RAIO PRRS-S1 CABO",
-    "parte_afetada_micro": "C909 CORROSÃO INTERMEDIÁRIA",
-    "sintoma_dano_macro": "SISTEMA ATERRAMENTO SATER-S1 CABO",
-    "sintoma_dano_micro": "C909 CORROSÃO INTERMEDIÁRIA"
-  },
-  {
-    "parte_afetada_macro": "PARA-RAIO PRRS-S1 CABO",
-    "parte_afetada_micro": "C912 COROSSÃO PESADA",
-    "sintoma_dano_macro": "SISTEMA ATERRAMENTO SATER-S1 CABO",
-    "sintoma_dano_micro": "C912 COROSSÃO PESADA"
-  },
-  {
-    "parte_afetada_macro": "PARA-RAIO PRRS-S1 CABO",
-    "parte_afetada_micro": "D825 DISTÂNCIA PR-CONDUTOR",
-    "sintoma_dano_macro": "SISTEMA ATERRAMENTO SATER-S1 CABO",
-    "sintoma_dano_micro": "D350 DESCONECTADO"
-  },
-  {
-    "parte_afetada_macro": "PARA-RAIO PRRS-S1 CABO",
-    "parte_afetada_micro": "O031 OBJETO ESTRANHO",
-    "sintoma_dano_macro": "SISTEMA ATERRAMENTO SATER-S1 CABO",
-    "sintoma_dano_micro": "O031 OBJETO ESTRANHO"
-  },
-  {
-    "parte_afetada_macro": "PARA-RAIO PRRS-S1 CABO",
-    "parte_afetada_micro": "Q360 QUEBRA/ROMPIMENTO",
-    "sintoma_dano_macro": "SISTEMA ATERRAMENTO SATER-S1 CABO",
-    "sintoma_dano_micro": "Q360 QUEBRA/ROMPIMENTO"
-  },
-  {
-    "parte_afetada_macro": "PARA-RAIO PRRS-S1 CABO",
-    "parte_afetada_micro": "T348 TENTOS PARTIDOS",
-    "sintoma_dano_macro": "SISTEMA ATERRAMENTO SATER-S1 CABO",
-    "sintoma_dano_micro": "R735 RESISTÊNCIA DE ATERRAMENTO"
-  },
-  {
-    "parte_afetada_macro": "PARA-RAIO PRRS-S1 CABO",
-    "parte_afetada_micro": "PRRS-S2 AMORTECEDOR",
-    "sintoma_dano_macro": "SISTEMA ATERRAMENTO SATER-S1 CABO",
-    "sintoma_dano_micro": "T348 TENTOS PARTIDOS"
-  },
-  {
-    "parte_afetada_macro": "PARA-RAIO PRRS-S1 CABO",
-    "parte_afetada_micro": "A147 AFROUXAMENTO",
-    "sintoma_dano_macro": "SISTEMA ATERRAMENTO SATER-S1 CABO",
-    "sintoma_dano_micro": "SATER-S2 ACESSÓRIOS"
-  },
-  {
-    "parte_afetada_macro": "PARA-RAIO PRRS-S1 CABO",
-    "parte_afetada_micro": "A771 AUSÊNCIA DE COMPONENTE",
-    "sintoma_dano_macro": "SISTEMA ATERRAMENTO SATER-S1 CABO",
-    "sintoma_dano_micro": "A147 AFROUXAMENTO"
-  },
-  {
-    "parte_afetada_macro": "PARA-RAIO PRRS-S1 CABO",
-    "parte_afetada_micro": "C909 CORROSÃO INTERMEDIÁRIA",
-    "sintoma_dano_macro": "SISTEMA ATERRAMENTO SATER-S1 CABO",
-    "sintoma_dano_micro": "A771 AUSÊNCIA DE COMPONENTE"
-  },
-  {
-    "parte_afetada_macro": "PARA-RAIO PRRS-S1 CABO",
-    "parte_afetada_micro": "C912 COROSSÃO PESADA",
-    "sintoma_dano_macro": "SISTEMA ATERRAMENTO SATER-S1 CABO",
-    "sintoma_dano_micro": "C909 CORROSÃO INTERMEDIÁRIA"
-  },
-  {
-    "parte_afetada_macro": "PARA-RAIO PRRS-S1 CABO",
-    "parte_afetada_micro": "E240 EMPENAMENTO F632 FISSURA P792 POSIÇÃO INDEVID",
-    "sintoma_dano_macro": "SISTEMA ATERRAMENTO SATER-S1 CABO",
-    "sintoma_dano_micro": "C912 COROSSÃO PESADA D350 DESCONECTADO F632 FISSURA"
-  },
-  {
-    "parte_afetada_macro": "ACESSO ESTAC-S1 ACESSO",
-    "parte_afetada_micro": "I833 INTRANSITÁVEL P810 PRECÁRIO",
-    "sintoma_dano_macro": "Classificação: Interna",
-    "sintoma_dano_micro": ""
+{
+  "parte_afetada": {
+    "ESTRUTURA ESMT-P1 FUNDAÇÃO": [
+      "C612 CONCRETO",
+      "G775 GRELHA",
+      "S710 STUB",
+      "ESMT-P2 ESTAI",
+      "A330 ALCA HELIFORMADA",
+      "C021 CABO",
+      "C690 CONEXÃO DO CONTRAPESO",
+      "C717 CONJUNTO DE FIXACÃO INFERIOR",
+      "C720 CONJUNTO DE FIXACÃO SUPERIOR",
+      "D125 DEFENSA",
+      "H220 HASTE DE ANCORA",
+      "M060 MANILHA E ACESSORIOS",
+      "R833 REVESTIMENTO AFLORAMENTO",
+      "ESMT-P3 INTERLIGACÃO DOS MASTROS",
+      "C054 CABO INTERLIGAÇÃO",
+      "C819 CONTRAPINO DA MANILHA",
+      "M054 MANILHA",
+      "P720 PORCA DA MANILHA",
+      "T396 TERMINAL DE COMPRESSÃO",
+      "ESMT-P4 ESTRUTURA",
+      "D125 DEFENSA",
+      "D200 DELTA",
+      "E825 EXTENSÃO G434 GERAL",
+      "M126 MASTRO INFERIOR",
+      "M132 MASTRO SUPERIOR",
+      "M294 MÍSULA",
+      "P378 PERNA",
+      "P702 PONTINA",
+      "V882 VIGA",
+      "ESMT-P5 SINALIZAÇÃO",
+      "A126 ADVERTÊNCIA",
+      "B270 BALIZADOR",
+      "E670 ESTAI",
+      "I035 IDENTIFICAÇÃO INFERIOR",
+      "I042 IDENTIFICAÇÃO SUPERIOR",
+      "P564 PLACA DE ORIENTACÃO AÉREA"
+    ],
+    "CADEIA CAIS-P1 CADEIA DE ISOLADORES": [
+      "C186 CAMPÂNULA",
+      "C972 CUPILHA",
+      "I882 ISOLADOR",
+      "P432 PINO",
+      "CAIS-P2 POLIMÉRICO",
+      "A333 ALETA",
+      "B495 BASTÃO",
+      "C972 CUPILHA",
+      "T402 TERMINAL LADO FASE",
+      "T408 TERMINAL LADO TERRA",
+      "CAIS-P3 FERRAGEM LADO FASE",
+      "A633 ARMADURA PRÉ-FORMADA",
+      "B252 BALANCIM",
+      "C312 CENTELHADOR/CHIFRE",
+      "C693 CONEXÃO MECÂNICA",
+      "D810 DISPOSITIVOS ANTICORONA",
+      "G651 GRAMPO",
+      "P384 PESO ADICIONAL",
+      "CAIS-P4 FERRAGEM LADO TERRA",
+      "A717 ATERRAMENTO",
+      "B525 BALANCIM",
+      "C312 CENTELHADOR/CHIFRE",
+      "C693 CONEXÃO MECÂNICA D810 DISPOSITIVOS ANTICORONA"
+    ],
+    "CONDUTOR CNDT-P1 CONDUTOR": [
+      "C627 CONDUTOR",
+      "E210 EMENDA COMPRESSÃO",
+      "E225 EMENDA PRÉ-FORMADA",
+      "J498 JUMPER",
+      "R637 REPARO",
+      "CNDT-P2 AMORTECEDOR",
+      "H550 HELICOIDAL",
+      "O899 OUTROS",
+      "S705 STOCKBRIDGE",
+      "CNDT-P3 ESPAÇADOR",
+      "E620 ESPAÇADOR-AMORTECEDOR",
+      "E625 ESPAÇADOR-RÍGIDO",
+      "CNDT-P4 CONECTOR",
+      "C363 CHAPA-CHAPA",
+      "C966 CUNHA",
+      "P126 PARALELO",
+      "T360 TERMINAL APARAFUSADO",
+      "T366 TERMINAL COMPRESSÃO",
+      "T480 TIPO T",
+      "CNDT-P5 SINALIZAÇÃO",
+      "A819 AVIFAUNA",
+      "B270 BALIZADOR"
+    ],
+    "FAIXA DE SERVIDÃO FXSR-P1 TERRENO": [
+      "D210 DENTRO DA SERVIDÃO",
+      "E345 ENTORNO DA ESTRUTURA",
+      "F704 FORA DA SERVIDÃO",
+      "T726 TRAVESSIA",
+      "FXSR-P2 CERCA",
+      "D210 DENTRO DA SERVIDÃO",
+      "E345 ENTORNO DA ESTRUTURA",
+      "F704 FORA DA SERVIDÃO",
+      "FXSR-P3 VEGETAÇÃO EXÓTICA",
+      "D210 DENTRO DA SERVIDÃO",
+      "E345 ENTORNO DA ESTRUTURA",
+      "F704 FORA DA SERVIDÃO",
+      "FXSR-P4 VEGETAÇÃO NATIVA",
+      "D210 DENTRO DA SERVIDÃO",
+      "E345 ENTORNO DA ESTRUTURA",
+      "F704 FORA DA SERVIDÃO",
+      "FXSR-P5 CULTURA",
+      "D210 DENTRO DA SERVIDÃO",
+      "E345 ENTORNO DA ESTRUTURA",
+      "F704 FORA DA SERVIDÃO"
+    ],
+    "PARA-RAIO PRRS-P1 CABO": [
+      "A045 ACESSÓRIOS DA ESCOTA",
+      "C021 CABO",
+      "E215 EMENDA COMPRESSÃO",
+      "E225 EMENDA PRÉ-FORMADA",
+      "J498 JUMPER",
+      "R637 REPARO",
+      "PRRS-P2 AMORTECEDOR",
+      "H550 HELICOIDAL",
+      "O899 OUTROS",
+      "S705 STOCKBRIDGE",
+      "PRRS-P3 SINALIZAÇÃO",
+      "A819 AVIFAUNA",
+      "B270 BALIZADOR",
+      "E595 ESFERA",
+      "PRRS-P4 ACESSÓRIOS",
+      "A633 ARMADURA PRÉ-FORMADA",
+      "C312 CENTELHADOR/CHIFRE",
+      "C660 CONECTOR PARALELO",
+      "C693 CONEXÃO MECÂNICA",
+      "C870 CORDOALHA",
+      "G651 GRAMPO I882 ISOLADOR",
+      "T360 TERMINAL APARAFUSADO",
+      "T366 TERMINAL COMPRESSÃO"
+    ],
+    "ACESSO ESTAC-P1 ACESSO": [
+      "P270 PASSAGEM MOLHADA",
+      "P660 PONTE",
+      "S420 SISTEMA DE DRENAGEM",
+      "V749 VEGETAÇÃO EXÓTICA",
+      "V756 VEGETAÇÃO NATIVA",
+      "V826 VIA DE ACESSO",
+      "ESTAC-P2 PORTEIRA/COLCHETE",
+      "C096 CADEADO",
+      "C513 COLCHETE",
+      "P728 PORTEIRA"
+    ],
+    "SISTEMA ATERRAMENTO SATER-P1 CABO": [
+      "C816 CONTRAPESO",
+      "E675 ESTAI DE ATERRAMENTO",
+      "F612 FIO DE INTERLIGAÇÃO",
+      "SATER-P2 ACESSÓRIOS",
+      "A039 ACESSÓRIOS"
+    ]
+    
+  },
+  "sintoma_dano": {
+    "ESTRUTURA ESMT-S1 FUNDAÇÃO": [
+      "A102 ACÚMULO DE ÁGUA",
+      "A144 AFLORAMENTO",
+      "A816 AVARIADO",
+      "C570 COMPACTAÇÃO INADEQUADA",
+      "C909 CORROSÃO INTERMEDIÁRIA",
+      "C912 CORROSÃO PESADA",
+      "E445 EROSÃO DE GRANDE PORTE",
+      "E450 EROSÃO DE MÉDIO PORTE",
+      "E455 EROSÃO DE PEQUENO PORTE",
+      "F632 FISSURA",
+      "ESMT-S2 ESTAI A147 AFROUXAMENTO",
+      "A771 AUSÊNCIA DE COMPONENTE",
+      "C909 CORROSÃO INTERMEDIÁRIA C912 CORROSÃO PESADA D350 DESCONECTADO",
+      "E240 EMPENAMENTO F632 FISSURA Q360 QUEBRA/ROMPIMENTO T348 TENTOS PARTIDOS",
+      "ESMT-S3 INTERLIGAÇÃO DOS MASTROS A147 AFROUXAMENTO",
+      "A771 AUSÊNCIA DE COMPONENTE",
+      "C909 CORROSÃO INTERMEDIÁRIA",
+      "C912 CORROSÃO PESADA",
+      "Q360 QUEBRA/ROMPIMENTO",
+      "T348 TENTOS PARTIDOS",
+      "ESMT-S4 ESTRUTURA A147 AFROUXAMENTO",
+      "A771 AUSÊNCIA DE COMPONENTE C909 CORROSÃO INTERMEDIÁRIA C912 CORROSÃO PESADA",
+      "E240 EMPENAMENTO",
+      "E330 ENTERRADO",
+      "F632 FISSURA",
+      "F720 FORA DE PRUMO OU EM TORÇÃO",
+      "I525 INSETOS",
+      "N715 NINHO DE AVES",
+      "Q360 QUEBRA/ROMPIMENTO",
+      "Q720 QUEDA",
+      "ESMT-S5 SINALIZAÇÃO",
+      "A147 AFROUXAMENTO",
+      "A771 AUSÊNCIA DE COMPONENTE",
+      "D350 DESCONECTADO",
+      "I091 ILEGÍVEL",
+      "I469 INFORMAÇÃO DESATUALIZADA",
+      "Q360 QUEBRA/ROMPIMENTO"
+    ],
+    "ISOLADORES CAIS-S1 CADEIA DE ISOLADORES": [
+      "A771 AUSÊNCIA DE COMPONENTE",
+      "C909 CORROSÃO INTERMEDIÁRIA",
+      "C912 COROSSÃO PESADA",
+      "E240 EMPENAMENTO",
+      "F720 \"FORA DE PRUMO OU EMTORÇÃO\"",
+      "O031 OBJETO ESTRANHO",
+      "P372 PERFURADO",
+      "P654 POLUÍDO",
+      "P729 POSIÇÃO INDEVIDA",
+      "Q360 QUEBRA/ROMPIMENTO",
+      "Q900 QUEIMADO",
+      "T780 TRINCA",
+      "CAIS-S2 POLIMÉRICO C909 CORROSÃO INTERMEDIÁRIA",
+      "C912 CORROSÃO PESADA D035 DANO POR ARCO DE POTÊNCIA D345 DESCOLORAÇÃO/GIZAMENTO E440 EROSÃO",
+      "F632 FISSURA",
+      "M114 MARCAS DE ATIVIDADE ELÉTRICA",
+      "P294 PELE DE JACARÉ",
+      "P372 PERFURADO",
+      "Q360 QUEBRA/ROMPIMENTO",
+      "T774 TRILHAMENTO EXTERNO",
+      "CAIS-S3 FERRAGEM LADO FASE A147 AFROUXAMENTO",
+      "A771 AUSÊNCIA DE COMPONENTE C909 CORROSÃO INTERMEDIÁRIA",
+      "C912 CORROSÃO PESADA",
+      "E240 EMPENAMENTO",
+      "F632 FISSURA",
+      "P792 POSIÇÃO INDEVIDA",
+      "Q360 QUEBRA/ROMPIMENTO",
+      "Q180 QUEBRA (OBSOLETO)",
+      "CAIS-S4 FERRAGEM LADO TERRA",
+      "A147 AFROUXAMENTO",
+      "A771 AUSÊNCIA DE COMPONENTE",
+      "C909 CORROSÃO INTERMEDIÁRIA",
+      "C912 CORROSÃO PESADA",
+      "E240 EMPENAMENTO",
+      "F632 FISSURA",
+      "P792 POSIÇÃO INDEVIDA"
+    ],
+    "CONDUTOR CNDT-S1 CONDUTOR": [
+      "A147 AFROUXAMENTO",
+      "A420 ALTURA CABO-SOLO BAIXO",
+      "C909 CORROSÃO INTERMEDIÁRIA",
+      "C912 CORROSÃO PESADA",
+      "D820 DISTÂNCIA ELÉTRICA INSUFICIENTE",
+      "O031 OBJETO ESTRANHO",
+      "P708 PONTO QUENTE",
+      "Q360 QUEBRA/ROMPIMENTO",
+      "T348 TENTOS PARTIDOS",
+      "CNDT-S2 AMORTECEDOR",
+      "A147 AFROUXAMENTO",
+      "A771 AUSÊNCIA DE COMPONENTE",
+      "C909 CORROSÃO INTERMEDIÁRIA",
+      "C912 CORROSÃO PESADA E240 EMPENAMENTO F632 FISSURA",
+      "P792 POSIÇÃO INDEVIDA Q360 QUEBRA/ROMPIMENTO CNDT-S3 ESPAÇADOR",
+      "A147 AFROUXAMENTO A771 AUSÊNCIA DE COMPONENTE",
+      "C909 CORROSÃO INTERMEDIÁRIA",
+      "C912 CORROSÃO PESADA",
+      "E240 EMPENAMENTO",
+      "F632 FISSURA",
+      "F746 FUNDIDO",
+      "G155 GARRA TRAVADA P708 PONTO QUENTE",
+      "P792 POSIÇÃO INDEVIDA Q360 QUEBRA/ROMPIMENTO CNDT-S4 SINALIZAÇÃO",
+      "A147 AFROUXAMENTO",
+      "A771 AUSÊNCIA DE COMPONENTE",
+      "P792 POSIÇÃO INDEVIDA",
+      "Q360 QUEBRA/ROMPIMENTO",
+      "CNDT-S5 CONECTOR",
+      "A147 AFROUXAMENTO",
+      "A771 AUSÊNCIA DE COMPONENTE",
+      "C909 CORROSÃO INTERMEDIÁRIA",
+      "C912 CORROSÃO PESADA",
+      "E240 EMPENAMENTO",
+      "F632 FISSURA",
+      "F746 FUNDIDO",
+      "P708 PONTO QUENTE",
+      "P792 POSIÇÃO INDEVIDA",
+      "Q360 QUEBRA/ROMPIMENTO"
+    ],
+    "FAIXA DE SERVIDÃO FXSR-S1 TERRENO": [
+      "C741 CONSTRUÇÃO IRREGULAR",
+      "D900 DUTO IRREGULAR",
+      "E445 EROSÃO DE GRANDE PORTE",
+      "E450 EROSÃO DE MÉDIO PORTE",
+      "E455 EROSÃO DE PEQUENO PORTE",
+      "O217 OBSTÁCULO NATURAL",
+      "R252 REDE ELÉTRICA IRREGULAR",
+      "V833 VIA DE TRANSPORTE IRREGULAR",
+      "R252 REDE DE TELECOMUNICAÇÃO IRREGULAR",
+      "FXSR-S2 VEGETAÇÃO EXÓTICA",
+      "C963 RISCO DE QUEIMADA",
+      "V742 RISCO DE APROXIMAÇÃO",
+      "FXSR-S3 CERCA A768 AUSÊNCIA DE ATERRAMENTO A780 AUSÊNCIA DE SECCIONAMENTO",
+      "FXSR-S4 VEGETAÇÃO NATIVA C963 RISCO DE QUEIMADA V742 RISCO DE APROXIMAÇÃO",
+      "FXSR-S5 CULTURA C963 RISCO DE QUEIMADAS",
+      "V742 RISCO DE APROXIMAÇÃO"
+    ],
+    "PARA-RAIO PRRS-S1 CABO": [
+      "A147 AFROUXAMENTO",
+      "A771 AUSÊNCIA DE COMPONENTE",
+      "C909 CORROSÃO INTERMEDIÁRIA",
+      "C912 COROSSÃO PESADA",
+      "D825 DISTÂNCIA PR-CONDUTOR",
+      "O031 OBJETO ESTRANHO",
+      "Q360 QUEBRA/ROMPIMENTO",
+      "T348 TENTOS PARTIDOS",
+      "PRRS-S2 AMORTECEDOR",
+      "A147 AFROUXAMENTO",
+      "A771 AUSÊNCIA DE COMPONENTE",
+      "C909 CORROSÃO INTERMEDIÁRIA",
+      "C912 COROSSÃO PESADA",
+      "E240 EMPENAMENTO F632 FISSURA P792 POSIÇÃO INDEVID",
+      "Q360 QUEBRA/ROMPIMENTO PRRS-S3 ACESSÓRIOS A147 AFROUXAMENTO",
+      "A771 AUSÊNCIA DE COMPONENTE C909 CORROSÃO INTERMEDIÁRIA",
+      "C912 COROSSÃO PESADA",
+      "E240 EMPENAMENTO",
+      "F632 FISSURA",
+      "F746 FUNDIDO",
+      "P708 PONTO QUENTE",
+      "P792 POSIÇÃO INDEVIDA Q360 QUEBRA/ROMPIMENTO PRRS-S4 SINALIZAÇÃO",
+      "A147 AFROUXAMENTO A771 AUSÊNCIA DE COMPONENTE",
+      "D297 DESBOTAMENTO",
+      "P792 POSIÇÃO INDEVIDA"
+    ],
+    "SISTEMA ATERRAMENTO SATER-S1 CABO": [
+      "A144 AFLORAMENTO",
+      "A771 AUSÊNCIA DE COMPONENTE",
+      "C909 CORROSÃO INTERMEDIÁRIA",
+      "C912 COROSSÃO PESADA",
+      "D350 DESCONECTADO",
+      "O031 OBJETO ESTRANHO",
+      "Q360 QUEBRA/ROMPIMENTO",
+      "R735 RESISTÊNCIA DE ATERRAMENTO",
+      "T348 TENTOS PARTIDOS",
+      "SATER-S2 ACESSÓRIOS",
+      "A147 AFROUXAMENTO",
+      "A771 AUSÊNCIA DE COMPONENTE",
+      "C909 CORROSÃO INTERMEDIÁRIA",
+      "C912 COROSSÃO PESADA D350 DESCONECTADO F632 FISSURA"
+    ],
+    "ACESSO ESTAC-S1 ACESSO": [
+      "I833 INTRANSITÁVEL P810 PRECÁRIO",
+      "ESTAC-S2 PORTEIRA/COLCHETE A771 AUSÊNCIA DE COMPONENTE C906 CORROSÃO",
+      "Q360 QUEBRA/ROMPIMENTO"
+    ]
+  
   }
-]
+}
