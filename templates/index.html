@@ -608,6 +608,46 @@ fetch('/static/catalogo.json')
       });
     });
   });
+
+  let catalogo = {};
+
+fetch('/static/catalogo.json')
+  .then(response => response.json())
+  .then(data => {
+    catalogo = data;
+
+    // Preenche os macros
+    const parteMacro = document.getElementById('parteMacro');
+    const sintomaMacro = document.getElementById('sintomaMacro');
+    Object.keys(catalogo.parte_afetada).forEach(macro => {
+      parteMacro.innerHTML += `<option value="${macro}">${macro}</option>`;
+    });
+    Object.keys(catalogo.sintoma_dano).forEach(macro => {
+      sintomaMacro.innerHTML += `<option value="${macro}">${macro}</option>`;
+    });
+  });
+
+document.getElementById('parteMacro').addEventListener('change', function() {
+  const macro = this.value;
+  const microSelect = document.getElementById('parteMicro');
+  microSelect.innerHTML = '<option value="">Selecione...</option>';
+  if (macro && catalogo.parte_afetada[macro]) {
+    catalogo.parte_afetada[macro].forEach(micro => {
+      microSelect.innerHTML += `<option value="${micro}">${micro}</option>`;
+    });
+  }
+});
+
+document.getElementById('sintomaMacro').addEventListener('change', function() {
+  const macro = this.value;
+  const microSelect = document.getElementById('sintomaMicro');
+  microSelect.innerHTML = '<option value="">Selecione...</option>';
+  if (macro && catalogo.sintoma_dano[macro]) {
+    catalogo.sintoma_dano[macro].forEach(micro => {
+      microSelect.innerHTML += `<option value="${micro}">${micro}</option>`;
+    });
+  }
+});
     </script>
 </body>
 </html>
