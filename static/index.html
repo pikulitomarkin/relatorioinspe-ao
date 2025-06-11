@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apontamento de Defeitos</title>
+    <title>Relatório de Inspeção</title>
     <link rel="manifest" href="/static/manifest.json">
     <meta name="theme-color" content="#007bff">
     <style>
@@ -147,7 +147,7 @@
 </head>
 <body>
     <div class="form-container">
-        <h1>Apontamento de Defeitos</h1>
+        <h1>Relatório de Inspeção</h1>
         <form id="inspection-form">
             <div class="form-row">
                 <div>
@@ -177,22 +177,22 @@
             <div class="form-row">
                 <div>
                     <label for="parte_macro">Parte Afetada (Macro):</label>
-                    <input type="text" id="parte_macro" name="Parte Afetada (Macro)" required>
+                    <select id="parte_macro" name="Parte Afetada (Macro)" required></select>
                 </div>
                 <div>
                     <label for="parte_micro">Parte Afetada (Micro):</label>
-                    <input type="text" id="parte_micro" name="Parte Afetada (Micro)" required>
+                    <select id="parte_micro" name="Parte Afetada (Micro)" required></select>
                 </div>
             </div>
 
             <div class="form-row">
                 <div>
                     <label for="sintoma_macro">Sintomas Dano (Macro):</label>
-                    <input type="text" id="sintoma_macro" name="Sintomas Dano (Macro)" required>
+                    <select id="sintoma_macro" name="Sintomas Dano (Macro)" required></select>
                 </div>
                 <div>
                     <label for="sintoma_micro">Sintomas Dano (Micro):</label>
-                    <input type="text" id="sintoma_micro" name="Sintomas Dano (Micro)" required>
+                    <select id="sintoma_micro" name="Sintomas Dano (Micro)" required></select>
                 </div>
             </div>
 
@@ -548,6 +548,66 @@ document.getElementById('prioridade').addEventListener('change', function () {
         dataExecInput.value = '';
     }
 });
+
+fetch('/static/catalogo.json')
+  .then(response => response.json())
+  .then(data => {
+    // Preencher Parte Afetada Macro
+    const parteMacroSet = new Set(data.map(item => item.parte_afetada_macro));
+    const parteMacroSelect = document.getElementById('parte_macro');
+    parteMacroSet.forEach(valor => {
+      if (valor) {
+        const option = document.createElement('option');
+        option.value = valor;
+        option.textContent = valor;
+        parteMacroSelect.appendChild(option);
+      }
+    });
+
+    // Quando selecionar Macro, filtra Micro
+    parteMacroSelect.addEventListener('change', function() {
+      const parteMicroSelect = document.getElementById('parte_micro');
+      parteMicroSelect.innerHTML = '';
+      const micros = data.filter(item => item.parte_afetada_macro === this.value)
+                         .map(item => item.parte_afetada_micro);
+      [...new Set(micros)].forEach(valor => {
+        if (valor) {
+          const option = document.createElement('option');
+          option.value = valor;
+          option.textContent = valor;
+          parteMicroSelect.appendChild(option);
+        }
+      });
+    });
+
+    // Preencher Sintoma Dano Macro
+    const sintomaMacroSet = new Set(data.map(item => item.sintoma_dano_macro));
+    const sintomaMacroSelect = document.getElementById('sintoma_macro');
+    sintomaMacroSet.forEach(valor => {
+      if (valor) {
+        const option = document.createElement('option');
+        option.value = valor;
+        option.textContent = valor;
+        sintomaMacroSelect.appendChild(option);
+      }
+    });
+
+    // Quando selecionar Macro, filtra Micro
+    sintomaMacroSelect.addEventListener('change', function() {
+      const sintomaMicroSelect = document.getElementById('sintoma_micro');
+      sintomaMicroSelect.innerHTML = '';
+      const micros = data.filter(item => item.sintoma_dano_macro === this.value)
+                         .map(item => item.sintoma_dano_micro);
+      [...new Set(micros)].forEach(valor => {
+        if (valor) {
+          const option = document.createElement('option');
+          option.value = valor;
+          option.textContent = valor;
+          sintomaMicroSelect.appendChild(option);
+        }
+      });
+    });
+  });
     </script>
 </body>
 </html>
