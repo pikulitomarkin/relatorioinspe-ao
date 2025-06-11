@@ -564,13 +564,24 @@ document.getElementById('prioridade').addEventListener('change', function () {
     return '';
 }
 
+        function emojiPorPrefixo(texto) {
+    if (texto.startsWith('ESMT')) return '🔴 ';
+    if (texto.startsWith('CAIS')) return '🔵 ';
+    if (texto.startsWith('CNDT')) return '🟠 ';
+    if (texto.startsWith('FXSR')) return '🟣 ';
+    if (texto.startsWith('PRRS')) return '🔵 ';
+    if (texto.startsWith('ESTAC')) return '🟢 ';
+    if (texto.startsWith('SATER')) return '🟤 ';
+    return '';
+}
+
         // Preencher Parte Afetada Macro
         const parteMacroSelect = document.getElementById('parte_macro');
         parteMacroSelect.innerHTML = '<option value="">Selecione...</option>';
         Object.keys(catalogo.parte_afetada).forEach(macro => {
           const option = document.createElement('option');
           option.value = macro;
-          option.textContent = macro;
+          option.textContent = emojiPorPrefixo(macro) + macro;
           option.style.color = corPorPrefixo(macro);
           parteMacroSelect.appendChild(option);
         });
