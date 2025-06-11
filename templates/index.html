@@ -608,7 +608,7 @@ document.getElementById('prioridade').addEventListener('change', function () {
         Object.keys(catalogo.sintoma_dano).forEach(macro => {
           const option = document.createElement('option');
           option.value = macro;
-          option.textContent = macro;
+          option.textContent = emojiPorPrefixo(macro) + macro; // <-- Adiciona emoji
           option.style.color = corPorPrefixo(macro);
           sintomaMacroSelect.appendChild(option);
         });
