@@ -553,6 +553,17 @@ document.getElementById('prioridade').addEventListener('change', function () {
     fetch('/static/catalogo.json')
       .then(response => response.json())
       .then(catalogo => {
+        function corPorPrefixo(texto) {
+    if (texto.startsWith('ESMT')) return 'red';
+    if (texto.startsWith('CAIS')) return 'deepskyblue';
+    if (texto.startsWith('CNDT')) return 'orange';
+    if (texto.startsWith('FXSR')) return 'purple';
+    if (texto.startsWith('PRRS')) return 'navy';
+    if (texto.startsWith('ESTAC')) return 'green';
+    if (texto.startsWith('SATER')) return 'brown';
+    return '';
+}
+
         // Preencher Parte Afetada Macro
         const parteMacroSelect = document.getElementById('parte_macro');
         parteMacroSelect.innerHTML = '<option value="">Selecione...</option>';
@@ -560,6 +571,7 @@ document.getElementById('prioridade').addEventListener('change', function () {
           const option = document.createElement('option');
           option.value = macro;
           option.textContent = macro;
+          option.style.color = corPorPrefixo(macro);
           parteMacroSelect.appendChild(option);
         });
 
@@ -573,6 +585,7 @@ document.getElementById('prioridade').addEventListener('change', function () {
               const option = document.createElement('option');
               option.value = micro;
               option.textContent = micro;
+              option.style.color = corPorPrefixo(macro); // Usa a cor do macro
               parteMicroSelect.appendChild(option);
             });
           }
@@ -585,6 +598,7 @@ document.getElementById('prioridade').addEventListener('change', function () {
           const option = document.createElement('option');
           option.value = macro;
           option.textContent = macro;
+          option.style.color = corPorPrefixo(macro);
           sintomaMacroSelect.appendChild(option);
         });
 
@@ -598,6 +612,7 @@ document.getElementById('prioridade').addEventListener('change', function () {
               const option = document.createElement('option');
               option.value = micro;
               option.textContent = micro;
+              option.style.color = corPorPrefixo(macro); // Usa a cor do macro
               sintomaMicroSelect.appendChild(option);
             });
           }
