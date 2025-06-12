@@ -265,7 +265,7 @@
       </div>
     </div>
 
-    <script src="/static/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script>
         const dbName = "inspecaoDB";
         const storeName = "dadosInspecao";
@@ -398,74 +398,7 @@
           event.target.reset();
         });
 
-        function gerarPlanilhaInspecao(dados) {
-    // Cabeçalho igual ao modelo
-    const header = [
-        "Nº da Ordem",
-        "Parte Afetada (MACRO)",
-        "Parte Afetada (MICRO)",
-        "Sintoma Dano (MACRO)",
-        "Sintoma Dano (MICRO)",
-        "Especialidade",
-        "LT.",
-        "Nº da Torre",
-        "Data da Inspeção",
-        "Data Nec. Exec.",
-        "Prioridade",
-        "Texto Item",
-        "Observação (Texto da Situação)"
-    ];
-
-    // Monta as linhas de dados
-    const linhas = dados.map(item => [
-        item["Nº da Ordem"] || "",
-        item["Parte Afetada (Macro)"] || "",
-        item["Parte Afetada (Micro)"] || "",
-        item["Sintomas Dano (Macro)"] || "",
-        item["Sintomas Dano (Micro)"] || "",
-        item["Especialidade"] || "",
-        item["LT."] || "",
-        item["Nº da Torre"] || "",
-        item["Data Inspeção"] || "",
-        item["Data Nec. Exec."] || "",
-        item["Prioridade"] || "",
-        item["Texto do Item"] || "",
-        item["Observação (Texto da Situação)"] || ""
-    ]);
-
-    // Adiciona linhas em branco até a linha 45
-    while (linhas.length < 45) {
-        linhas.push(Array(header.length).fill(""));
-    }
-
-    // Junta cabeçalho e linhas
-    const ws_data = [header, ...linhas];
-
-    // Cria a planilha
-    const ws = XLSX.utils.aoa_to_sheet(ws_data);
-
-    // (Opcional) Ajusta largura das colunas
-    ws['!cols'] = [
-        { wch: 12 }, // Nº da Ordem
-        { wch: 20 }, // Parte Afetada (MACRO)
-        { wch: 20 }, // Parte Afetada (MICRO)
-        { wch: 20 }, // Sintoma Dano (MACRO)
-        { wch: 20 }, // Sintoma Dano (MICRO)
-        { wch: 15 }, // Especialidade
-        { wch: 8 },  // LT.
-        { wch: 12 }, // Nº da Torre
-        { wch: 15 }, // Data da Inspeção
-        { wch: 15 }, // Data Nec. Exec.
-        { wch: 12 }, // Prioridade
-        { wch: 20 }, // Texto Item
-        { wch: 25 }  // Observação
-    ];
-
-    // Cria o workbook e salva
-    const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, "Planilha1");
-    XLSX.writeFile(wb, "inspecao.xlsx");
-}
+     
 
         async function generateExcelOffline() {
             console.log("Botão 'Gerar Planilha Inspeção' clicado.");
