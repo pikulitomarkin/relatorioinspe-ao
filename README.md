@@ -19,5 +19,5 @@ Este é um sistema para gerenciamento de inspeções, permitindo o preenchimento
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/SEU_USUARIO/anexo-inspecao.git
+   git clone https://github.com/pikulito/anexo-inspecao.git
    cd anexo-inspecao
